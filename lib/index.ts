@@ -228,6 +228,7 @@ export class WebAcl extends Construct {
     const rule: Rule = {
       name,
       priority,
+      overrideAction: { none: {} },
       statement: {
         managedRuleGroupStatement: {
           vendorName: 'AWS',
@@ -269,6 +270,7 @@ export class WebAcl extends Construct {
     const rule: Rule = {
       name,
       priority,
+      overrideAction: { none: {} },
       statement: {
         managedRuleGroupStatement: {
           vendorName: 'AWS',
