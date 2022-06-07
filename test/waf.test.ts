@@ -44,6 +44,59 @@ describe('WebAcl', () => {
     }))
   })
 
+  it('should be possible to add a custom rule and enable a rule', () => {
+    const stack = new Stack()
+
+    new WebAcl(stack, 'MyWaf', {
+      scope: SCOPE.REGIONAL,
+      metricName: 'my-metric',
+      defaultAction: {
+        allow: {}
+      },
+      rules: [
+        {
+          name: 'my-rule',
+          priority: 0,
+          statement: {
+
+          },
+          visibilityConfig: {
+            cloudWatchMetricsEnabled: true,
+            metricName: 'something',
+            sampledRequestsEnabled: true
+          }
+        }
+      ]
+    })
+      .enableIpBlockRule()
+
+    const template = Template.fromStack(stack)
+    template.hasResourceProperties('AWS::WAFv2::WebACL', Match.objectLike({
+      DefaultAction: {
+        Allow: {}
+      },
+      Scope: 'REGIONAL',
+      VisibilityConfig: {
+        CloudWatchMetricsEnabled: true,
+        MetricName: 'my-metric',
+        SampledRequestsEnabled: true
+      },
+      Rules: [
+        {
+          Name: 'my-rule',
+          Priority: 0,
+          Statement: {},
+          VisibilityConfig: {
+            CloudWatchMetricsEnabled: true,
+            MetricName: 'something',
+            SampledRequestsEnabled: true
+          }
+        },
+        {}
+      ]
+    }))
+  })
+
   describe('enableIpBlockRule', () => {
     it('should create a rule with defaults', () => {
       const stack = new Stack()
