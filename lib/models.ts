@@ -57,10 +57,12 @@ export interface WebAclProps extends VisibilityConfig, Omit<CfnWebACLProps, 'sco
  */
 export type Rule = CfnWebACL.RuleProperty
 
+interface BaseRuleProps extends VisibilityConfig, Omit<Rule, 'name' | 'statement' | 'priority' | 'visibilityConfig'> {}
+
 /**
  * Properties when enabling the IP Block rule
  */
-export interface EnableIpBlockProps extends VisibilityConfig, Omit<Rule, 'name' | 'statement' | 'priority' | 'visibilityConfig'> {
+export interface EnableIpBlockProps extends BaseRuleProps {
   /**
    * Metric name for default action
    *
@@ -87,7 +89,7 @@ export interface EnableIpBlockProps extends VisibilityConfig, Omit<Rule, 'name' 
 /**
  * Properties when enabling the Rate Limit rule
  */
-export interface EnableRateLimitRule extends VisibilityConfig, Omit<Rule, 'name' | 'statement' | 'priority' | 'action' | 'visibilityConfig'> {
+export interface EnableRateLimitRuleProps extends Omit<BaseRuleProps, 'action'> {
   /**
    * Metric name for default action
    *
@@ -131,4 +133,85 @@ export interface EnableRateLimitRule extends VisibilityConfig, Omit<Rule, 'name'
    * @default 1000
    */
   rateLimit?: number
+}
+
+/**
+ * Properties when enabling the IP Reputation rule
+ */
+export interface EnableIpReputationRuleProps extends Omit<BaseRuleProps, 'action'> {
+  /**
+   * Metric name for default action
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname
+   * @default 'ip-reputation'
+   */
+  metricName?: CfnWebACL.VisibilityConfigProperty['metricName']
+  /**
+   * The name of the rule. You can't change the name of a `Rule` after you create it.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-name
+   * @default 'ip-reputation'
+   */
+  name?: Rule['name']
+  /**
+   * If you define more than one `Rule` in a `WebACL` , AWS WAF evaluates each request against the `Rules` in order based on the value of `Priority` . AWS WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-priority
+   * @default 30
+   */
+  priority?: Rule['priority']
+}
+
+/**
+ * Properties when enabling the Managed Core rule
+ */
+export interface EnableManagedCoreRuleProps extends Omit<BaseRuleProps, 'action'> {
+  /**
+   * Metric name for default action
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname
+   * @default 'managed-core'
+   */
+  metricName?: CfnWebACL.VisibilityConfigProperty['metricName']
+  /**
+   * The name of the rule. You can't change the name of a `Rule` after you create it.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-name
+   * @default 'managed-core'
+   */
+  name?: Rule['name']
+  /**
+   * If you define more than one `Rule` in a `WebACL` , AWS WAF evaluates each request against the `Rules` in order based on the value of `Priority` . AWS WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-priority
+   * @default 40
+   */
+  priority?: Rule['priority']
+}
+
+/**
+ * Properties when enabling the Bad Inputs rule
+ */
+export interface EnableBadInputsRule extends Omit<BaseRuleProps, 'action'> {
+  /**
+   * Metric name for default action
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname
+   * @default 'bad-inputs'
+   */
+  metricName?: CfnWebACL.VisibilityConfigProperty['metricName']
+  /**
+   * The name of the rule. You can't change the name of a `Rule` after you create it.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-name
+   * @default 'bad-inputs'
+   */
+  name?: Rule['name']
+  /**
+   * If you define more than one `Rule` in a `WebACL` , AWS WAF evaluates each request against the `Rules` in order based on the value of `Priority` . AWS WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-priority
+   * @default 50
+   */
+  priority?: Rule['priority']
 }
