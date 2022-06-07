@@ -4,6 +4,14 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "description": "Opinionated wrapper around CDK L1 Construct WebAcl",
+  "author": {
+    "name": "Enfo COPS",
+    "email": "cops-aws@enfogroup.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/enfogroup/aws-cdk-waf.git"
+  },
   "keywords": [
     "aws",
     "cdk",
