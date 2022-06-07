@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "description": "Opinionated wrapper around CDK L1 Construct WebAcl",
+  "keywords": [
+    "aws",
+    "cdk",
+    "awscdk",
+    "waf",
+    "webacl"
+  ],
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
