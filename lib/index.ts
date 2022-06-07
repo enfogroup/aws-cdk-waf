@@ -14,7 +14,13 @@ enum RULE_ID {
  * WebAcl with methods for enabling opinionated rules
  */
 export class WebAcl extends Construct {
+  /**
+   * The internal WebAcl
+   */
   public webAcl: CfnWebACL
+  /**
+   * IP Set used if the IP Block rule is enabled
+   */
   public ipSet: CfnIPSet | undefined
 
   private props: WebAclProps
@@ -37,6 +43,7 @@ export class WebAcl extends Construct {
     this.props = props
     const { cloudWatchMetricsEnabled = true, sampledRequestsEnabled = true, metricName, ...rest } = props
 
+    this.ruleSet = new Set<RULE_ID>()
     this.webAcl = new CfnWebACL(this, 'WebAcl', {
       ...rest,
       visibilityConfig: {
@@ -76,7 +83,7 @@ export class WebAcl extends Construct {
    * @param props
    * See interface definition
    */
-  public enableIpBlockRule (props: EnableIpBlockProps = {}): void {
+  public enableIpBlockRule (props: EnableIpBlockProps = {}): WebAcl {
     const id = RULE_ID.IP_BLOCK
     this.checkIfRuleIsEnabled(id)
 
@@ -113,6 +120,7 @@ export class WebAcl extends Construct {
 
     this.pushRule(rule)
     this.setRuleAsEnabled(id)
+    return this
   }
 
   /**
@@ -120,7 +128,7 @@ export class WebAcl extends Construct {
    * @param props
    * See interface definition
    */
-  public enableRateLimitRule (props: EnableRateLimitRuleProps = {}): void {
+  public enableRateLimitRule (props: EnableRateLimitRuleProps = {}): WebAcl {
     const id = RULE_ID.RATE_LIMIT
     this.checkIfRuleIsEnabled(id)
 
@@ -155,6 +163,7 @@ export class WebAcl extends Construct {
 
     this.pushRule(rule)
     this.setRuleAsEnabled(id)
+    return this
   }
 
   /**
@@ -162,7 +171,7 @@ export class WebAcl extends Construct {
    * @param props
    * See interface definition
    */
-  public enableIpReputationRule (props: EnableIpReputationRuleProps = {}): void {
+  public enableIpReputationRule (props: EnableIpReputationRuleProps = {}): WebAcl {
     const id = RULE_ID.IP_REPUTATION
     this.checkIfRuleIsEnabled(id)
 
@@ -195,6 +204,7 @@ export class WebAcl extends Construct {
 
     this.pushRule(rule)
     this.setRuleAsEnabled(id)
+    return this
   }
 
   /**
@@ -202,7 +212,7 @@ export class WebAcl extends Construct {
    * @param props
    * See interface definition
    */
-  public enableManagedCoreRule (props: EnableManagedCoreRuleProps = {}): void {
+  public enableManagedCoreRule (props: EnableManagedCoreRuleProps = {}): WebAcl {
     const id = RULE_ID.MANAGED_CORE
     this.checkIfRuleIsEnabled(id)
 
@@ -235,6 +245,7 @@ export class WebAcl extends Construct {
 
     this.pushRule(rule)
     this.setRuleAsEnabled(id)
+    return this
   }
 
   /**
@@ -242,7 +253,7 @@ export class WebAcl extends Construct {
    * @param props
    * See interface definition
    */
-  public enableBadInputsRule (props: EnableBadInputsRule = {}): void {
+  public enableBadInputsRule (props: EnableBadInputsRule = {}): WebAcl {
     const id = RULE_ID.BAD_INPUTS
     this.checkIfRuleIsEnabled(id)
 
@@ -275,5 +286,6 @@ export class WebAcl extends Construct {
 
     this.pushRule(rule)
     this.setRuleAsEnabled(id)
+    return this
   }
 }
