@@ -57,7 +57,10 @@ export interface WebAclProps extends VisibilityConfig, Omit<CfnWebACLProps, 'sco
  */
 export type Rule = CfnWebACL.RuleProperty
 
-interface BaseRuleProps extends VisibilityConfig, Omit<Rule, 'name' | 'statement' | 'priority' | 'visibilityConfig'> {}
+/**
+ * Base props for all rules props
+ */
+export interface BaseRuleProps extends VisibilityConfig, Omit<Rule, 'name' | 'statement' | 'priority' | 'visibilityConfig'> {}
 
 /**
  * Properties when enabling the IP Block rule
