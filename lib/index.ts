@@ -1,4 +1,4 @@
-import { Construct } from 'constructs';
+import { Construct } from 'constructs'
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export interface AwsCdkWafProps {
@@ -6,9 +6,8 @@ export interface AwsCdkWafProps {
 }
 
 export class AwsCdkWaf extends Construct {
-
-  constructor(scope: Construct, id: string, props: AwsCdkWafProps = {}) {
-    super(scope, id);
+  constructor (scope: Construct, id: string, props: AwsCdkWafProps = {}) {
+    super(scope, id)
 
     // Define construct contents here
 
