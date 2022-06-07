@@ -1,4 +1,4 @@
-import { WebAcl } from '../lib'
+import { WebAcl } from '../lib/waf'
 import { SCOPE } from '../lib/models'
 
 import { Stack } from 'aws-cdk-lib'
