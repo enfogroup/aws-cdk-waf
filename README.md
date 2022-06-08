@@ -92,17 +92,13 @@ All rules share the same base interface. The following properties have been modi
 
 ### enableIpBlockRule configuration
 
-You can read about IP set rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-ipset-match.html). The IP Block rule supports more properties than other rules. These have been grabbed from CfnIPSetProps, some have been removed, others removed:
+You can read about IP set rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-ipset-match.html). The IP Block rule supports more properties than other rules. These have been grabbed from CfnIPSetProps, some have been replaced, others removed:
 
 * ipSetName, name you want for the IP Set
 * ipSetDescription, description you want for the IP Set
 * addresses, no longer mandatory
 * ipAddressVersion, replaced with enum instead of a string
 * ipSetTags
-
-In addition you can supply your own IP Set:
-
-* ipSet, instance of CfnIPSet
 
 Example of enableIpBlockRule options:
 
@@ -144,7 +140,7 @@ new Fixme(stack, 'Fixme', {
   })
 ```
 
-Using your own IP Set:
+You can also supply your own IP Set:
 
 ```typescript
 const ipSet = new CfnIPSet(stack, 'MySet', {
