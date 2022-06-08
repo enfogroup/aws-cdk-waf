@@ -248,7 +248,7 @@ export interface EnableRateLimitRuleProps extends BaseRuleProps {
 /**
  * Properties when enabling the IP Reputation rule
  */
-export interface EnableIpReputationRuleProps extends BaseRuleWithActionProps {
+export interface EnableIpReputationRuleProps extends BaseRuleProps {
   /**
    * Metric name for default action
    *
@@ -275,7 +275,7 @@ export interface EnableIpReputationRuleProps extends BaseRuleWithActionProps {
 /**
  * Properties when enabling the Managed Core rule
  */
-export interface EnableManagedCoreRuleProps extends BaseRuleWithActionProps {
+export interface EnableManagedCoreRuleProps extends BaseRuleProps {
   /**
    * Metric name for default action
    *
@@ -302,7 +302,7 @@ export interface EnableManagedCoreRuleProps extends BaseRuleWithActionProps {
 /**
  * Properties when enabling the Bad Inputs rule
  */
-export interface EnableBadInputsRule extends BaseRuleWithActionProps {
+export interface EnableBadInputsRule extends BaseRuleProps {
   /**
    * Metric name for default action
    *
