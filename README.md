@@ -1,12 +1,157 @@
-# Welcome to your CDK TypeScript Construct Library project
+# Introduction
 
-You should explore the contents of this project. It demonstrates a CDK Construct Library that includes a construct (`AwsCdkWaf`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+This package exposes an opinionated Construct for setting up an AWS WebAcl using the CDK. Five custom rules are ready to be enabled. If you are not using the custom rules this package will not bring you much value.
 
-The construct defines an interface (`AwsCdkWafProps`) to configure the visibility timeout of the queue.
+# Installation
 
-## Useful commands
+Install the package by running
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
+```bash
+npm install @enfo/aws-cdk-fixme
+```
+
+# Getting started
+
+## Quick start
+
+This is example is the least amount of configuration you have to do in order for the WebAcl to be created
+
+```typescript
+import { Fixme, Scope } from '@enfo/aws-cdk-fixme'
+import { Stack } from 'aws-cdk-lib'
+
+const stack = new Stack()
+const fixme = new Fixme(stack, 'MyFixme', {
+  scope: Scope.REGIONAL,
+  metricName: 'my-metric',
+  defaultAction: {
+    allow: {}
+  }
+})
+.enableIpBlockRule()
+.enableRateLimitRule()
+.enableIpReputationRule()
+.enableManagedCoreRule()
+.enableBadInputsRule()
+```
+
+## Configuration options
+
+The Fixme and all rules can be configured.
+
+### Fixme configuration
+
+The Fixme Construct takes an object with the interface FixmeProps which supports all properties from CfnWebAclProps except:
+
+* scope, this has been replaced with an enum instead of a string
+* visibilityConfig, this has been removed and its properties flattened into FixmeProps. Only metricName is mandatory
+
+Example of unique configuration options unique to Fixme:
+
+```typescript
+new Fixme(stack, 'MyFixme', {
+  scope: Scope.CLOUDFRONT,
+  metricName: 'my-metric',
+  cloudWatchMetricsEnabled: true,
+  sampledRequestsEnabled: true,
+  defaultAction: { // not unique but must be included
+    allow: {}
+  }
+})
+```
+
+### Rules configurations
+
+You can only a rule **ONCE**. Attempting to enable a rule twice will result in an Error being thrown.
+
+All rules share the same base interface. The following properties have been modified from CfnWebACL.RuleProperty:
+
+* name, no longer mandatory, has a rule specific default
+* priority, no longer mandatory, has a rule specific default
+* statement, removed, set for you
+* visibilityConfig, removed and properties flatted into rule properties
+* action, removed from all rules but IP Block
+* overrideAction, set to `{ none: {} }` on all rules but IP Block
+
+### enableIpBlockRule configuration
+
+You can read about IP set rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-ipset-match.html). Example of enableIpBlockRule options:
+
+```typescript
+new Fixme(...)
+.enableIpBlockRule({
+  name: 'cool-name', // default 'ip-block'
+  priority: 1, // default 10
+  metricName: 'something', // default 'ip-block'
+  cloudWatchMetricsEnabled: true,
+  sampledRequestsEnabled: true,
+  action: {
+    allow: {}
+  }
+})
+```
+
+### enableRateLimitRule configuration
+
+You can read about rate limit rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-rate-based.html). The Rate Limit rule supports one property extra than the other rules:
+
+* rateLimit, defaults to 1000
+
+Example of options:
+
+```typescript
+new Fixme(...)
+.enableRateLimitRule({
+  name: 'cool-name', // default 'rate-limit'
+  priority: 1, // default 20
+  metricName: 'something', // default 'rate-limit'
+  rateLimit: 1337,
+  cloudWatchMetricsEnabled: true,
+  sampledRequestsEnabled: true
+})
+```
+
+### enableIpReputationRule configuration
+
+You can read about IP reputation rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-ip-rep.html). Example of enableIpReputationRule options:
+
+```typescript
+new Fixme(...)
+.enableIpReputationRule({
+  name: 'cool-name', // default 'ip-reputation'
+  priority: 1, // default 30
+  metricName: 'something', // default 'ip-reputation'
+  cloudWatchMetricsEnabled: true,
+  sampledRequestsEnabled: true
+})
+```
+
+### enableManagedCoreRule configuration
+
+You can read about the AWS core rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-baseline.html). Example of enableManagedCoreRule options:
+
+```typescript
+new Fixme(...)
+.enableManagedCoreRule({
+  name: 'cool-name', // default 'managed-core'
+  priority: 1, // default 40
+  metricName: 'something', // default 'managed-core'
+  cloudWatchMetricsEnabled: true,
+  sampledRequestsEnabled: true
+})
+```
+
+### enableBadInputsRule configuration
+
+You can read about the AWS bad inputs rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-baseline.html#aws-managed-rule-groups-baseline-known-bad-inputs). Example of enableBadInputsRule options:
+
+```typescript
+new Fixme(...)
+.enableBadInputsRule({
+  name: 'cool-name', // default 'bad-inputs'
+  priority: 1, // default 50
+  metricName: 'something', // default 'bad-inputs'
+  cloudWatchMetricsEnabled: true,
+  sampledRequestsEnabled: true
+})
+```
