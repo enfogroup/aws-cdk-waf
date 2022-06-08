@@ -1,5 +1,5 @@
 import { CfnTag, IResolvable } from 'aws-cdk-lib'
-import { CfnWebACL } from 'aws-cdk-lib/aws-wafv2'
+import { CfnIPSet, CfnWebACL } from 'aws-cdk-lib/aws-wafv2'
 
 export interface VisibilityConfig {
   /**
@@ -32,6 +32,76 @@ export enum Scope {
    * Used to associate the WAF with applications other than CloudFront. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AWS AppSync GraphQL API.
    */
   REGIONAL = 'REGIONAL'
+}
+
+/**
+ * Available IP address versions
+ */
+export enum IpAddressVersion {
+  /**
+   * IP version 4
+   */
+  IPV4 = 'IPV4',
+  /**
+   * IP version 6
+   */
+  IPV6 = 'IPV6'
+}
+
+/**
+ * Properties when creating an IP Set
+ */
+export interface IpSetProps {
+    /**
+     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     *
+     * Example address strings:
+     *
+     * - To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify `192.0.2.44/32` .
+     * - To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify `192.0.2.0/24` .
+     * - To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify `1111:0000:0000:0000:0000:0000:0000:0111/128` .
+     * - To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify `1111:0000:0000:0000:0000:0000:0000:0000/64` .
+     *
+     * For more information about CIDR notation, see the Wikipedia entry [Classless Inter-Domain Routing](https://docs.aws.amazon.com/https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) .
+     *
+     * Example JSON `Addresses` specifications:
+     *
+     * - Empty array: `"Addresses": []`
+     * - Array with one address: `"Addresses": ["192.0.2.44/32"]`
+     * - Array with three addresses: `"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]`
+     * - INVALID specification: `"Addresses": [""]` INVALID
+     *
+     * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-addresses
+     * @default []
+     */
+     readonly addresses?: string[];
+     /**
+      * The version of the IP addresses, either `IPV4` or `IPV6` .
+      *
+      * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-ipaddressversion
+      * @default 'IPV4'
+      */
+     readonly ipAddressVersion?: IpAddressVersion;
+     /**
+      * A description of the IP set that helps with identification.
+      *
+      * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-description
+      */
+     readonly ipSetDescription?: string;
+     /**
+      * The name of the IP set. You cannot change the name of an `IPSet` after you create it.
+      *
+      * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-name
+      */
+     readonly ipSetName?: string;
+     /**
+      * Key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
+      *
+      * > To modify tags on existing resources, use the AWS WAF APIs or command line interface. With AWS CloudFormation , you can only add tags to AWS WAF resources during resource creation.
+      *
+      * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-tags
+      */
+     readonly ipSetTags?: CfnTag[];
 }
 
 /**
@@ -172,7 +242,7 @@ export interface BaseRuleWithActionProps extends BaseRuleProps {
 /**
  * Properties when enabling the IP Block rule
  */
-export interface EnableIpBlockProps extends BaseRuleWithActionProps {
+export interface EnableIpBlockProps extends BaseRuleWithActionProps, IpSetProps {
   /**
    * Metric name for default action
    *
@@ -194,6 +264,10 @@ export interface EnableIpBlockProps extends BaseRuleWithActionProps {
    * @default 10
    */
   readonly priority?: Rule['priority']
+  /**
+   * Optional IP Set to pass for usage. If none is supplied one will be created using the optional IP Set props
+   */
+  readonly ipSet?: CfnIPSet
 }
 
 /**

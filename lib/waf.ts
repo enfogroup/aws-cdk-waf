@@ -1,6 +1,6 @@
 import { Construct } from 'constructs'
 import { CfnIPSet, CfnWebACL } from 'aws-cdk-lib/aws-wafv2'
-import { EnableBadInputsRule, EnableIpBlockProps, EnableIpReputationRuleProps, EnableManagedCoreRuleProps, EnableRateLimitRuleProps, Rule, WebAclProps } from './models'
+import { EnableBadInputsRule, EnableIpBlockProps, EnableIpReputationRuleProps, EnableManagedCoreRuleProps, EnableRateLimitRuleProps, IpAddressVersion, Rule, WebAclProps } from './models'
 
 enum RULE_ID {
   IP_BLOCK = 'ip-block',
@@ -93,13 +93,22 @@ export class WebAcl extends Construct {
       cloudWatchMetricsEnabled = true,
       sampledRequestsEnabled = true,
       priority = 10,
+      ipSetName,
+      ipSetDescription,
+      addresses = [],
+      ipAddressVersion = IpAddressVersion.IPV4,
+      ipSetTags,
+      ipSet,
       ...rest
     } = props
 
-    this.ipSet = new CfnIPSet(this, 'IpSet', {
+    this.ipSet = ipSet ?? new CfnIPSet(this, 'IpSet', {
+      name: ipSetName,
+      description: ipSetDescription,
       scope: this.props.scope,
-      addresses: [],
-      ipAddressVersion: 'IPV4'
+      addresses,
+      ipAddressVersion,
+      tags: ipSetTags
     })
     const rule: Rule = {
       name,
