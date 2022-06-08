@@ -19,6 +19,9 @@ This is example is the least amount of configuration you have to do in order for
 ```typescript
 import { Fixme, Scope } from '@enfo/aws-cdk-fixme'
 import { Stack } from 'aws-cdk-lib'
+import { RestApi } from 'aws-cdk-lib/aws-apigateway'
+import { CfnWebACLAssociation } from 'aws-cdk-lib/aws-wafv2'
+import { Distribution } from 'aws-cdk-lib/aws-cloudfront'
 
 const stack = new Stack()
 const fixme = new Fixme(stack, 'MyFixme', {
@@ -28,11 +31,25 @@ const fixme = new Fixme(stack, 'MyFixme', {
     allow: {}
   }
 })
-.enableIpBlockRule()
-.enableRateLimitRule()
-.enableIpReputationRule()
-.enableManagedCoreRule()
-.enableBadInputsRule()
+  .enableIpBlockRule()
+  .enableRateLimitRule()
+  .enableIpReputationRule()
+  .enableManagedCoreRule()
+  .enableBadInputsRule()
+
+// associating it with an API
+const api = new RestApi(stack, 'Api')
+api.root.addMethod('GET')
+new CfnWebACLAssociation(this, 'ApiAssociation', {
+  webAclArn: fixme.webAcl.attrArn,
+  resourceArn: `arn:aws:apigateway:${Stack.of(stack).region}::/restapis/${api.deploymentStage.restApi.restApiId}/stages/${api.deploymentStage.stageName}`
+});
+
+// associating it with a CloudFront Distribution
+new Distribution(stack, 'Distribution', {
+  webAclId: fixme.webAcl.attrArn,
+  // more properties
+})
 ```
 
 ## Configuration options
@@ -75,7 +92,19 @@ All rules share the same base interface. The following properties have been modi
 
 ### enableIpBlockRule configuration
 
-You can read about IP set rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-ipset-match.html). Example of enableIpBlockRule options:
+You can read about IP set rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-ipset-match.html). The IP Block rule supports more properties than other rules. These have been grabbed from CfnIPSetProps, some have been removed, others removed:
+
+* ipSetName, name you want for the IP Set
+* ipSetDescription, description you want for the IP Set
+* addresses, no longer mandatory
+* ipAddressVersion, replaced with enum instead of a string
+* ipSetTags
+
+In addition you can supply your own IP Set:
+
+* ipSet, instance of CfnIPSet
+
+Example of enableIpBlockRule options:
 
 ```typescript
 new Fixme(...)
@@ -90,6 +119,54 @@ new Fixme(...)
   }
 })
 ```
+
+Customizing the IP Set:
+
+```typescript
+new Fixme(stack, 'Fixme', {
+  scope: Scope.REGIONAL,
+  metricName: 'something',
+  defaultAction: {
+    allow: {}
+  }
+})
+  .enableIpBlockRule({
+    ipSetName: 'my-set',
+    ipSetDescription: 'desc',
+    addresses: ['2001:0db8:85a3:0000:0000:8a2e:0370:7334'],
+    ipAddressVersion: IpAddressVersion.IPV6,
+    ipSetTags: [
+      {
+        key: 'key!',
+        value: 'value!'
+      }
+    ]
+  })
+```
+
+Using your own IP Set:
+
+```typescript
+const ipSet = new CfnIPSet(stack, 'MySet', {
+  scope: 'REGIONAL',
+  name: 'my-set',
+  addresses: [],
+  ipAddressVersion: 'IPV4'
+})
+
+new Fixme(stack, 'Fixme', {
+  scope: Scope.REGIONAL,
+  metricName: 'something',
+  defaultAction: {
+    allow: {}
+  }
+})
+  .enableIpBlockRule({
+    ipSet
+  })
+```
+
+If an IP Set is supplied Fixme will not create one
 
 ### enableRateLimitRule configuration
 
