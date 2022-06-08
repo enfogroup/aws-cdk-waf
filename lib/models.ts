@@ -23,7 +23,7 @@ export interface VisibilityConfig {
 /**
  * Available resource associations
  */
-export enum SCOPE {
+export enum Scope {
   /**
    * Used to allow associations with CloudFront Distributions
    */
@@ -91,7 +91,7 @@ export interface WebAclProps extends VisibilityConfig {
   /**
    * Defines which type of resource this WAF should be associated with
    */
-  readonly scope: SCOPE
+  readonly scope: Scope
   /**
    * Metric name for default action
    *
@@ -149,6 +149,9 @@ export interface BaseRuleProps extends VisibilityConfig {
   readonly ruleLabels?: Array<CfnWebACL.LabelProperty | IResolvable> | IResolvable;
 }
 
+/**
+ * Base rule props with action included
+ */
 export interface BaseRuleWithActionProps extends BaseRuleProps {
 
   /**

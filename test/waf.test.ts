@@ -1,5 +1,5 @@
 import { WebAcl } from '../lib/waf'
-import { SCOPE } from '../lib/models'
+import { Scope } from '../lib/models'
 
 import { Stack } from 'aws-cdk-lib'
 
@@ -11,7 +11,7 @@ describe('WebAcl', () => {
     const stack = new Stack()
 
     new WebAcl(stack, 'MyWaf', {
-      scope: SCOPE.REGIONAL,
+      scope: Scope.REGIONAL,
       metricName: 'my-metric',
       defaultAction: {
         allow: {}
@@ -48,7 +48,7 @@ describe('WebAcl', () => {
     const stack = new Stack()
 
     new WebAcl(stack, 'MyWaf', {
-      scope: SCOPE.REGIONAL,
+      scope: Scope.REGIONAL,
       metricName: 'my-metric',
       defaultAction: {
         allow: {}
@@ -102,7 +102,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -138,7 +138,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -183,7 +183,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -199,7 +199,7 @@ describe('WebAcl', () => {
 
       expect(() => {
         new WebAcl(stack, 'MyWaf', {
-          scope: SCOPE.REGIONAL,
+          scope: Scope.REGIONAL,
           metricName: 'something',
           defaultAction: {
             allow: {}
@@ -216,7 +216,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -257,7 +257,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -305,7 +305,7 @@ describe('WebAcl', () => {
 
       expect(() => {
         new WebAcl(stack, 'MyWaf', {
-          scope: SCOPE.REGIONAL,
+          scope: Scope.REGIONAL,
           metricName: 'something',
           defaultAction: {
             allow: {}
@@ -322,7 +322,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -359,7 +359,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -403,7 +403,7 @@ describe('WebAcl', () => {
 
       expect(() => {
         new WebAcl(stack, 'MyWaf', {
-          scope: SCOPE.REGIONAL,
+          scope: Scope.REGIONAL,
           metricName: 'something',
           defaultAction: {
             allow: {}
@@ -420,7 +420,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -457,7 +457,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -501,7 +501,7 @@ describe('WebAcl', () => {
 
       expect(() => {
         new WebAcl(stack, 'MyWaf', {
-          scope: SCOPE.REGIONAL,
+          scope: Scope.REGIONAL,
           metricName: 'something',
           defaultAction: {
             allow: {}
@@ -518,7 +518,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -555,7 +555,7 @@ describe('WebAcl', () => {
       const stack = new Stack()
 
       new WebAcl(stack, 'MyWaf', {
-        scope: SCOPE.REGIONAL,
+        scope: Scope.REGIONAL,
         metricName: 'something',
         defaultAction: {
           allow: {}
@@ -599,7 +599,7 @@ describe('WebAcl', () => {
 
       expect(() => {
         new WebAcl(stack, 'MyWaf', {
-          scope: SCOPE.REGIONAL,
+          scope: Scope.REGIONAL,
           metricName: 'something',
           defaultAction: {
             allow: {}
