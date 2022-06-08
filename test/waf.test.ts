@@ -1,10 +1,11 @@
 import { WebAcl } from '../lib/waf'
-import { Scope } from '../lib/models'
+import { IpAddressVersion, Scope } from '../lib/models'
 
 import { Stack } from 'aws-cdk-lib'
 
 import '@aws-cdk/assert/jest'
 import { Match, Template } from 'aws-cdk-lib/assertions'
+import { CfnIPSet } from 'aws-cdk-lib/aws-wafv2'
 
 describe('WebAcl', () => {
   it('should be possible to create a WebAcl with minimal config and enable all rules', () => {
@@ -192,6 +193,102 @@ describe('WebAcl', () => {
         .enableIpBlockRule()
 
       expect(stack).toCountResources('AWS::WAFv2::IPSet', 1)
+    })
+
+    it('should be possible to supply your own ip set', () => {
+      const stack = new Stack()
+
+      const ipSet = new CfnIPSet(stack, 'MySet', {
+        scope: 'REGIONAL',
+        name: 'my-set',
+        addresses: [],
+        ipAddressVersion: 'IPV4'
+      })
+
+      new WebAcl(stack, 'MyWaf', {
+        scope: Scope.REGIONAL,
+        metricName: 'something',
+        defaultAction: {
+          allow: {}
+        }
+      })
+        .enableIpBlockRule({
+          ipSet
+        })
+
+      expect(stack).toCountResources('AWS::WAFv2::IPSet', 1)
+      expect(stack).toHaveResource('AWS::WAFv2::IPSet', {
+        Name: 'my-set'
+      })
+    })
+
+    it('should be possible to customize the ip set', () => {
+      const stack = new Stack()
+
+      new WebAcl(stack, 'MyWaf', {
+        scope: Scope.REGIONAL,
+        metricName: 'something',
+        defaultAction: {
+          allow: {}
+        }
+      })
+        .enableIpBlockRule({
+          ipSetName: 'my-set',
+          ipSetDescription: 'desc',
+          addresses: ['127.0.0.1'],
+          ipAddressVersion: IpAddressVersion.IPV6,
+          ipSetTags: [
+            {
+              key: 'key!',
+              value: 'value!'
+            }
+          ]
+        })
+
+      expect(stack).toCountResources('AWS::WAFv2::IPSet', 1)
+      expect(stack).toHaveResource('AWS::WAFv2::IPSet', {
+        Addresses: [
+          '127.0.0.1'
+        ],
+        IPAddressVersion: 'IPV6',
+        Scope: 'REGIONAL',
+        Description: 'desc',
+        Name: 'my-set',
+        Tags: [
+          {
+            Key: 'key!',
+            Value: 'value!'
+          }
+        ]
+      })
+    })
+
+    it('should use the supplied set rather than creating one', () => {
+      const stack = new Stack()
+
+      const ipSet = new CfnIPSet(stack, 'MySet', {
+        scope: 'REGIONAL',
+        name: 'my-supplied-set',
+        addresses: [],
+        ipAddressVersion: 'IPV4'
+      })
+
+      new WebAcl(stack, 'MyWaf', {
+        scope: Scope.REGIONAL,
+        metricName: 'something',
+        defaultAction: {
+          allow: {}
+        }
+      })
+        .enableIpBlockRule({
+          ipSet,
+          ipSetName: 'my-created-set'
+        })
+
+      expect(stack).toCountResources('AWS::WAFv2::IPSet', 1)
+      expect(stack).toHaveResource('AWS::WAFv2::IPSet', {
+        Name: 'my-supplied-set'
+      })
     })
 
     it('should throw if the rule is enabled twice', () => {
