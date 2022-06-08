@@ -79,7 +79,7 @@ new Fixme(stack, 'MyFixme', {
 
 ### Rules configurations
 
-You can only a rule **ONCE**. Attempting to enable a rule twice will result in an Error being thrown.
+You can only enable a rule **ONCE**. Attempting to enable a rule twice will result in an Error being thrown.
 
 All rules share the same base interface. The following properties have been modified from CfnWebACL.RuleProperty:
 
