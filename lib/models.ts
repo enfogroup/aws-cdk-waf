@@ -111,20 +111,6 @@ export type Rule = CfnWebACL.RuleProperty
  * Base props for all rules props
  */
 export interface BaseRuleProps extends VisibilityConfig {
-
-  /**
-   * The action that AWS WAF should take on a web request when it matches the rule's statement. Settings at the web ACL level can override the rule action setting.
-   *
-   * This is used only for rules whose statements don't reference a rule group. Rule statements that reference a rule group are `RuleGroupReferenceStatement` and `ManagedRuleGroupStatement` .
-   *
-   * You must set either this `Action` setting or the rule's `OverrideAction` , but not both:
-   *
-   * - If the rule statement doesn't reference a rule group, you must set this rule action setting and you must not set the rule's override action setting.
-   * - If the rule statement references a rule group, you must not set this action setting, because the actions are already set on the rules inside the rule group. You must set the rule's override action setting to indicate specifically whether to override the actions that are set on the rules in the rule group.
-   *
-   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-action
-   */
-  readonly action?: CfnWebACL.RuleActionProperty | IResolvable;
   /**
    * Specifies how AWS WAF should handle `CAPTCHA` evaluations. If you don't specify this, AWS WAF uses the `CAPTCHA` configuration that's defined for the web ACL.
    *
@@ -163,10 +149,27 @@ export interface BaseRuleProps extends VisibilityConfig {
   readonly ruleLabels?: Array<CfnWebACL.LabelProperty | IResolvable> | IResolvable;
 }
 
+export interface BaseRuleWithActionProps extends BaseRuleProps {
+
+  /**
+   * The action that AWS WAF should take on a web request when it matches the rule's statement. Settings at the web ACL level can override the rule action setting.
+   *
+   * This is used only for rules whose statements don't reference a rule group. Rule statements that reference a rule group are `RuleGroupReferenceStatement` and `ManagedRuleGroupStatement` .
+   *
+   * You must set either this `Action` setting or the rule's `OverrideAction` , but not both:
+   *
+   * - If the rule statement doesn't reference a rule group, you must set this rule action setting and you must not set the rule's override action setting.
+   * - If the rule statement references a rule group, you must not set this action setting, because the actions are already set on the rules inside the rule group. You must set the rule's override action setting to indicate specifically whether to override the actions that are set on the rules in the rule group.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-action
+   */
+  readonly action?: CfnWebACL.RuleActionProperty | IResolvable;
+}
+
 /**
  * Properties when enabling the IP Block rule
  */
-export interface EnableIpBlockProps extends BaseRuleProps {
+export interface EnableIpBlockProps extends BaseRuleWithActionProps {
   /**
    * Metric name for default action
    *
@@ -242,7 +245,7 @@ export interface EnableRateLimitRuleProps extends BaseRuleProps {
 /**
  * Properties when enabling the IP Reputation rule
  */
-export interface EnableIpReputationRuleProps extends BaseRuleProps {
+export interface EnableIpReputationRuleProps extends BaseRuleWithActionProps {
   /**
    * Metric name for default action
    *
@@ -269,7 +272,7 @@ export interface EnableIpReputationRuleProps extends BaseRuleProps {
 /**
  * Properties when enabling the Managed Core rule
  */
-export interface EnableManagedCoreRuleProps extends BaseRuleProps {
+export interface EnableManagedCoreRuleProps extends BaseRuleWithActionProps {
   /**
    * Metric name for default action
    *
@@ -296,7 +299,7 @@ export interface EnableManagedCoreRuleProps extends BaseRuleProps {
 /**
  * Properties when enabling the Bad Inputs rule
  */
-export interface EnableBadInputsRule extends BaseRuleProps {
+export interface EnableBadInputsRule extends BaseRuleWithActionProps {
   /**
    * Metric name for default action
    *
