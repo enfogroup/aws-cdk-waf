@@ -7,7 +7,7 @@ This package exposes an opinionated Construct for setting up an AWS WebAcl using
 Install the package by running
 
 ```bash
-npm install @enfo/aws-cdk-fixme
+npm install @enfo/cdk-webacl
 ```
 
 # Getting started
@@ -17,14 +17,14 @@ npm install @enfo/aws-cdk-fixme
 This is example is the least amount of configuration you have to do in order for the WebAcl to be created
 
 ```typescript
-import { Fixme, Scope } from '@enfo/aws-cdk-fixme'
+import { WebAcl, Scope } from '@enfo/cdk-webacl'
 import { Stack } from 'aws-cdk-lib'
 import { RestApi } from 'aws-cdk-lib/aws-apigateway'
 import { CfnWebACLAssociation } from 'aws-cdk-lib/aws-wafv2'
 import { Distribution } from 'aws-cdk-lib/aws-cloudfront'
 
 const stack = new Stack()
-const fixme = new Fixme(stack, 'MyFixme', {
+const webacl = new WebAcl(stack, 'MyWebAcl', {
   scope: Scope.REGIONAL,
   metricName: 'my-metric',
   defaultAction: {
@@ -41,32 +41,32 @@ const fixme = new Fixme(stack, 'MyFixme', {
 const api = new RestApi(stack, 'Api')
 api.root.addMethod('GET')
 new CfnWebACLAssociation(this, 'ApiAssociation', {
-  webAclArn: fixme.cfnWebAcl.attrArn,
+  webAclArn: webacl.attrArn,
   resourceArn: `arn:aws:apigateway:${Stack.of(stack).region}::/restapis/${api.deploymentStage.restApi.restApiId}/stages/${api.deploymentStage.stageName}`
 });
 
 // associating it with a CloudFront Distribution
 new Distribution(stack, 'Distribution', {
-  webAclId: fixme.cfnWebAcl.attrArn,
+  webAclId: webacl.attrArn,
   // more properties
 })
 ```
 
 ## Configuration options
 
-The Fixme and all rules can be configured.
+The WebAcl and all rules can be configured.
 
-### Fixme configuration
+### WebAcl configuration
 
-The Fixme Construct takes an object with the interface FixmeProps which supports all properties from CfnWebAclProps except:
+The WebAcl Construct takes an object with the interface WebAclProps which supports all properties from CfnWebAclProps except:
 
 * scope, this has been replaced with an enum instead of a string
-* visibilityConfig, this has been removed and its properties flattened into FixmeProps. Only metricName is mandatory
+* visibilityConfig, this has been removed and its properties flattened into WebAclProps. Only metricName is mandatory
 
-Example of unique configuration options unique to Fixme:
+Example of unique configuration options unique to WebAcl:
 
 ```typescript
-new Fixme(stack, 'MyFixme', {
+new WebAcl(stack, 'MyWebAcl', {
   scope: Scope.CLOUDFRONT,
   metricName: 'my-metric',
   cloudWatchMetricsEnabled: true,
@@ -103,7 +103,7 @@ You can read about IP set rules [here](https://docs.aws.amazon.com/waf/latest/de
 Example of enableIpBlockRule options:
 
 ```typescript
-new Fixme(...)
+new WebAcl(...)
 .enableIpBlockRule({
   name: 'cool-name', // default 'ip-block'
   priority: 1, // default 10
@@ -119,7 +119,7 @@ new Fixme(...)
 Customizing the IP Set:
 
 ```typescript
-new Fixme(stack, 'Fixme', {
+new WebAcl(stack, 'WebAcl', {
   scope: Scope.REGIONAL,
   metricName: 'something',
   defaultAction: {
@@ -150,7 +150,7 @@ const ipSet = new CfnIPSet(stack, 'MySet', {
   ipAddressVersion: 'IPV4'
 })
 
-new Fixme(stack, 'Fixme', {
+new WebAcl(stack, 'WebAcl', {
   scope: Scope.REGIONAL,
   metricName: 'something',
   defaultAction: {
@@ -162,7 +162,7 @@ new Fixme(stack, 'Fixme', {
   })
 ```
 
-If an IP Set is supplied Fixme will not create one
+If an IP Set is supplied WebAcl will not create one
 
 ### enableRateLimitRule configuration
 
@@ -173,7 +173,7 @@ You can read about rate limit rules [here](https://docs.aws.amazon.com/waf/lates
 Example of options:
 
 ```typescript
-new Fixme(...)
+new WebAcl(...)
 .enableRateLimitRule({
   name: 'cool-name', // default 'rate-limit'
   priority: 1, // default 20
@@ -189,7 +189,7 @@ new Fixme(...)
 You can read about IP reputation rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-ip-rep.html). Example of enableIpReputationRule options:
 
 ```typescript
-new Fixme(...)
+new WebAcl(...)
 .enableIpReputationRule({
   name: 'cool-name', // default 'ip-reputation'
   priority: 1, // default 30
@@ -207,7 +207,7 @@ new Fixme(...)
 You can read about the AWS core rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-baseline.html). Example of enableManagedCoreRule options:
 
 ```typescript
-new Fixme(...)
+new WebAcl(...)
 .enableManagedCoreRule({
   name: 'cool-name', // default 'managed-core'
   priority: 1, // default 40
@@ -225,7 +225,7 @@ new Fixme(...)
 You can read about the AWS bad inputs rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-baseline.html#aws-managed-rule-groups-baseline-known-bad-inputs). Example of enableBadInputsRule options:
 
 ```typescript
-new Fixme(...)
+new WebAcl(...)
 .enableBadInputsRule({
   name: 'cool-name', // default 'bad-inputs'
   priority: 1, // default 50
