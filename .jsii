@@ -1,0 +1,4650 @@
+{
+  "author": {
+    "email": "cops-aws@enfogroup.com",
+    "name": "Enfo COPS",
+    "roles": [
+      "author"
+    ]
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.27.0",
+    "constructs": "^10.1.31"
+  },
+  "dependencyClosure": {
+    "aws-cdk-lib": {
+      "submodules": {
+        "aws-cdk-lib.alexa_ask": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.Alexa.Ask"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.alexa.ask"
+            },
+            "python": {
+              "module": "aws_cdk.alexa_ask"
+            }
+          }
+        },
+        "aws-cdk-lib.assertions": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.Assertions"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.assertions"
+            },
+            "python": {
+              "module": "aws_cdk.assertions"
+            }
+          }
+        },
+        "aws-cdk-lib.assets": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.Assets"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.assets"
+            },
+            "python": {
+              "module": "aws_cdk.assets"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_accessanalyzer": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AccessAnalyzer"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.accessanalyzer"
+            },
+            "python": {
+              "module": "aws_cdk.aws_accessanalyzer"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_acmpca": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ACMPCA"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.acmpca"
+            },
+            "python": {
+              "module": "aws_cdk.aws_acmpca"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_amazonmq": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AmazonMQ"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.amazonmq"
+            },
+            "python": {
+              "module": "aws_cdk.aws_amazonmq"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_amplify": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Amplify"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.amplify"
+            },
+            "python": {
+              "module": "aws_cdk.aws_amplify"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_amplifyuibuilder": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AmplifyUIBuilder"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.amplifyuibuilder"
+            },
+            "python": {
+              "module": "aws_cdk.aws_amplifyuibuilder"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_apigateway": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.APIGateway"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.apigateway"
+            },
+            "python": {
+              "module": "aws_cdk.aws_apigateway"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_apigatewayv2": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Apigatewayv2"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.apigatewayv2"
+            },
+            "python": {
+              "module": "aws_cdk.aws_apigatewayv2"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_appconfig": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AppConfig"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.appconfig"
+            },
+            "python": {
+              "module": "aws_cdk.aws_appconfig"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_appflow": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AppFlow"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.appflow"
+            },
+            "python": {
+              "module": "aws_cdk.aws_appflow"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_appintegrations": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AppIntegrations"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.appintegrations"
+            },
+            "python": {
+              "module": "aws_cdk.aws_appintegrations"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_applicationautoscaling": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ApplicationAutoScaling"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.applicationautoscaling"
+            },
+            "python": {
+              "module": "aws_cdk.aws_applicationautoscaling"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_applicationinsights": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ApplicationInsights"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.applicationinsights"
+            },
+            "python": {
+              "module": "aws_cdk.aws_applicationinsights"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_appmesh": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AppMesh"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.appmesh"
+            },
+            "python": {
+              "module": "aws_cdk.aws_appmesh"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_apprunner": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AppRunner"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.apprunner"
+            },
+            "python": {
+              "module": "aws_cdk.aws_apprunner"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_appstream": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AppStream"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.appstream"
+            },
+            "python": {
+              "module": "aws_cdk.aws_appstream"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_appsync": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AppSync"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.appsync"
+            },
+            "python": {
+              "module": "aws_cdk.aws_appsync"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_aps": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.APS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.aps"
+            },
+            "python": {
+              "module": "aws_cdk.aws_aps"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_athena": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Athena"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.athena"
+            },
+            "python": {
+              "module": "aws_cdk.aws_athena"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_auditmanager": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AuditManager"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.auditmanager"
+            },
+            "python": {
+              "module": "aws_cdk.aws_auditmanager"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_autoscaling": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AutoScaling"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.autoscaling"
+            },
+            "python": {
+              "module": "aws_cdk.aws_autoscaling"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_autoscaling_common": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AutoScaling.Common"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.autoscaling.common"
+            },
+            "python": {
+              "module": "aws_cdk.aws_autoscaling_common"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_autoscaling_hooktargets": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AutoScaling.HookTargets"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.autoscaling.hooktargets"
+            },
+            "python": {
+              "module": "aws_cdk.aws_autoscaling_hooktargets"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_autoscalingplans": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.AutoScalingPlans"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.autoscalingplans"
+            },
+            "python": {
+              "module": "aws_cdk.aws_autoscalingplans"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_backup": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Backup"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.backup"
+            },
+            "python": {
+              "module": "aws_cdk.aws_backup"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_batch": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Batch"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.batch"
+            },
+            "python": {
+              "module": "aws_cdk.aws_batch"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_billingconductor": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.BillingConductor"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.billingconductor"
+            },
+            "python": {
+              "module": "aws_cdk.aws_billingconductor"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_budgets": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Budgets"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.budgets"
+            },
+            "python": {
+              "module": "aws_cdk.aws_budgets"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_cassandra": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Cassandra"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.cassandra"
+            },
+            "python": {
+              "module": "aws_cdk.aws_cassandra"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ce": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CE"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ce"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ce"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_certificatemanager": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CertificateManager"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.certificatemanager"
+            },
+            "python": {
+              "module": "aws_cdk.aws_certificatemanager"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_chatbot": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Chatbot"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.chatbot"
+            },
+            "python": {
+              "module": "aws_cdk.aws_chatbot"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_cloud9": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Cloud9"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.cloud9"
+            },
+            "python": {
+              "module": "aws_cdk.aws_cloud9"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_cloudformation": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CloudFormation"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.cloudformation"
+            },
+            "python": {
+              "module": "aws_cdk.aws_cloudformation"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_cloudfront": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CloudFront"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.cloudfront"
+            },
+            "python": {
+              "module": "aws_cdk.aws_cloudfront"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_cloudfront.experimental": {},
+        "aws-cdk-lib.aws_cloudfront_origins": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CloudFront.Origins"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.cloudfront.origins"
+            },
+            "python": {
+              "module": "aws_cdk.aws_cloudfront_origins"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_cloudtrail": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CloudTrail"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.cloudtrail"
+            },
+            "python": {
+              "module": "aws_cdk.aws_cloudtrail"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_cloudwatch": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CloudWatch"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.cloudwatch"
+            },
+            "python": {
+              "module": "aws_cdk.aws_cloudwatch"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_cloudwatch_actions": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CloudWatch.Actions"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.cloudwatch.actions"
+            },
+            "python": {
+              "module": "aws_cdk.aws_cloudwatch_actions"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codeartifact": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CodeArtifact"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codeartifact"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codeartifact"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codebuild": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CodeBuild"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codebuild"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codebuild"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codecommit": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CodeCommit"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codecommit"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codecommit"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codedeploy": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CodeDeploy"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codedeploy"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codedeploy"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codeguruprofiler": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CodeGuruProfiler"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codeguruprofiler"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codeguruprofiler"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codegurureviewer": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CodeGuruReviewer"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codegurureviewer"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codegurureviewer"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codepipeline": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CodePipeline"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codepipeline"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codepipeline"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codepipeline_actions": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CodePipeline.Actions"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codepipeline.actions"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codepipeline_actions"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codestar": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Codestar"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codestar"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codestar"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codestarconnections": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CodeStarConnections"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codestarconnections"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codestarconnections"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_codestarnotifications": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CodeStarNotifications"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.codestarnotifications"
+            },
+            "python": {
+              "module": "aws_cdk.aws_codestarnotifications"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_cognito": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Cognito"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.cognito"
+            },
+            "python": {
+              "module": "aws_cdk.aws_cognito"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_config": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Config"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.config"
+            },
+            "python": {
+              "module": "aws_cdk.aws_config"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_connect": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Connect"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.connect"
+            },
+            "python": {
+              "module": "aws_cdk.aws_connect"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_cur": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CUR"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.cur"
+            },
+            "python": {
+              "module": "aws_cdk.aws_cur"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_customerprofiles": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.CustomerProfiles"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.customerprofiles"
+            },
+            "python": {
+              "module": "aws_cdk.aws_customerprofiles"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_databrew": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.DataBrew"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.databrew"
+            },
+            "python": {
+              "module": "aws_cdk.aws_databrew"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_datapipeline": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.DataPipeline"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.datapipeline"
+            },
+            "python": {
+              "module": "aws_cdk.aws_datapipeline"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_datasync": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.DataSync"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.datasync"
+            },
+            "python": {
+              "module": "aws_cdk.aws_datasync"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_dax": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.DAX"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.dax"
+            },
+            "python": {
+              "module": "aws_cdk.aws_dax"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_detective": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Detective"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.detective"
+            },
+            "python": {
+              "module": "aws_cdk.aws_detective"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_devopsguru": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.DevOpsGuru"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.devopsguru"
+            },
+            "python": {
+              "module": "aws_cdk.aws_devopsguru"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_directoryservice": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.DirectoryService"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.directoryservice"
+            },
+            "python": {
+              "module": "aws_cdk.aws_directoryservice"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_dlm": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.DLM"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.dlm"
+            },
+            "python": {
+              "module": "aws_cdk.aws_dlm"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_dms": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.DMS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.dms"
+            },
+            "python": {
+              "module": "aws_cdk.aws_dms"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_docdb": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.DocDB"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.docdb"
+            },
+            "python": {
+              "module": "aws_cdk.aws_docdb"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_dynamodb": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.DynamoDB"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.dynamodb"
+            },
+            "python": {
+              "module": "aws_cdk.aws_dynamodb"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ec2": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.EC2"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ec2"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ec2"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ecr": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ECR"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ecr"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ecr"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ecr_assets": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Ecr.Assets"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ecr.assets"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ecr_assets"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ecs": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ECS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ecs"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ecs"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ecs_patterns": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ECS.Patterns"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ecs.patterns"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ecs_patterns"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_efs": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.EFS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.efs"
+            },
+            "python": {
+              "module": "aws_cdk.aws_efs"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_eks": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.EKS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.eks"
+            },
+            "python": {
+              "module": "aws_cdk.aws_eks"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_elasticache": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ElastiCache"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.elasticache"
+            },
+            "python": {
+              "module": "aws_cdk.aws_elasticache"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_elasticbeanstalk": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ElasticBeanstalk"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.elasticbeanstalk"
+            },
+            "python": {
+              "module": "aws_cdk.aws_elasticbeanstalk"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_elasticloadbalancing": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ElasticLoadBalancing"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.elasticloadbalancing"
+            },
+            "python": {
+              "module": "aws_cdk.aws_elasticloadbalancing"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_elasticloadbalancingv2": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ElasticLoadBalancingV2"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.elasticloadbalancingv2"
+            },
+            "python": {
+              "module": "aws_cdk.aws_elasticloadbalancingv2"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_elasticloadbalancingv2_actions": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ElasticLoadBalancingV2.Actions"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.elasticloadbalancingv2.actions"
+            },
+            "python": {
+              "module": "aws_cdk.aws_elasticloadbalancingv2_actions"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_elasticloadbalancingv2_targets": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ElasticLoadBalancingV2.Targets"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.elasticloadbalancingv2.targets"
+            },
+            "python": {
+              "module": "aws_cdk.aws_elasticloadbalancingv2_targets"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_elasticsearch": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Elasticsearch"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.elasticsearch"
+            },
+            "python": {
+              "module": "aws_cdk.aws_elasticsearch"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_emr": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.EMR"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.emr"
+            },
+            "python": {
+              "module": "aws_cdk.aws_emr"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_emrcontainers": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.EMRContainers"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.emrcontainers"
+            },
+            "python": {
+              "module": "aws_cdk.aws_emrcontainers"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_emrserverless": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.EMRServerless"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.emrserverless"
+            },
+            "python": {
+              "module": "aws_cdk.aws_emrserverless"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_events": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Events"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.events"
+            },
+            "python": {
+              "module": "aws_cdk.aws_events"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_events_targets": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Events.Targets"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.events.targets"
+            },
+            "python": {
+              "module": "aws_cdk.aws_events_targets"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_eventschemas": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.EventSchemas"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.eventschemas"
+            },
+            "python": {
+              "module": "aws_cdk.aws_eventschemas"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_evidently": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Evidently"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.evidently"
+            },
+            "python": {
+              "module": "aws_cdk.aws_evidently"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_finspace": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.FinSpace"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.finspace"
+            },
+            "python": {
+              "module": "aws_cdk.aws_finspace"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_fis": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.FIS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.fis"
+            },
+            "python": {
+              "module": "aws_cdk.aws_fis"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_fms": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.FMS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.fms"
+            },
+            "python": {
+              "module": "aws_cdk.aws_fms"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_forecast": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Forecast"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.forecast"
+            },
+            "python": {
+              "module": "aws_cdk.aws_forecast"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_frauddetector": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.FraudDetector"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.frauddetector"
+            },
+            "python": {
+              "module": "aws_cdk.aws_frauddetector"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_fsx": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.FSx"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.fsx"
+            },
+            "python": {
+              "module": "aws_cdk.aws_fsx"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_gamelift": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.GameLift"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.gamelift"
+            },
+            "python": {
+              "module": "aws_cdk.aws_gamelift"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_globalaccelerator": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.GlobalAccelerator"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.globalaccelerator"
+            },
+            "python": {
+              "module": "aws_cdk.aws_globalaccelerator"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_globalaccelerator_endpoints": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.GlobalAccelerator.Endpoints"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.globalaccelerator.endpoints"
+            },
+            "python": {
+              "module": "aws_cdk.aws_globalaccelerator_endpoints"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_glue": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Glue"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.glue"
+            },
+            "python": {
+              "module": "aws_cdk.aws_glue"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_greengrass": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Greengrass"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.greengrass"
+            },
+            "python": {
+              "module": "aws_cdk.aws_greengrass"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_greengrassv2": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.GreengrassV2"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.greengrassv2"
+            },
+            "python": {
+              "module": "aws_cdk.aws_greengrassv2"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_groundstation": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.GroundStation"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.groundstation"
+            },
+            "python": {
+              "module": "aws_cdk.aws_groundstation"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_guardduty": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.GuardDuty"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.guardduty"
+            },
+            "python": {
+              "module": "aws_cdk.aws_guardduty"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_healthlake": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.HealthLake"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.healthlake"
+            },
+            "python": {
+              "module": "aws_cdk.aws_healthlake"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iam": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IAM"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iam"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iam"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_imagebuilder": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ImageBuilder"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.imagebuilder"
+            },
+            "python": {
+              "module": "aws_cdk.aws_imagebuilder"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_inspector": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Inspector"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.inspector"
+            },
+            "python": {
+              "module": "aws_cdk.aws_inspector"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_inspectorv2": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.InspectorV2"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.inspectorv2"
+            },
+            "python": {
+              "module": "aws_cdk.aws_inspectorv2"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iot": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IoT"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iot"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iot"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iot1click": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IoT1Click"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iot1click"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iot1click"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iotanalytics": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IoTAnalytics"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iotanalytics"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iotanalytics"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iotcoredeviceadvisor": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IoTCoreDeviceAdvisor"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iotcoredeviceadvisor"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iotcoredeviceadvisor"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iotevents": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IoTEvents"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iotevents"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iotevents"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iotfleethub": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IoTFleetHub"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iotfleethub"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iotfleethub"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iotsitewise": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IoTSiteWise"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iotsitewise"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iotsitewise"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iotthingsgraph": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IoTThingsGraph"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iotthingsgraph"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iotthingsgraph"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iottwinmaker": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IoTTwinMaker"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iottwinmaker"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iottwinmaker"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_iotwireless": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.IoTWireless"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.iotwireless"
+            },
+            "python": {
+              "module": "aws_cdk.aws_iotwireless"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ivs": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Ivs"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ivs"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ivs"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_kafkaconnect": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.KafkaConnect"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.kafkaconnect"
+            },
+            "python": {
+              "module": "aws_cdk.aws_kafkaconnect"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_kendra": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Kendra"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.kendra"
+            },
+            "python": {
+              "module": "aws_cdk.aws_kendra"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_kinesis": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Kinesis"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.kinesis"
+            },
+            "python": {
+              "module": "aws_cdk.aws_kinesis"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_kinesisanalytics": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.KinesisAnalytics"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.kinesisanalytics"
+            },
+            "python": {
+              "module": "aws_cdk.aws_kinesisanalytics"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_kinesisanalyticsv2": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.KinesisAnalyticsV2"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.kinesisanalyticsv2"
+            },
+            "python": {
+              "module": "aws_cdk.aws_kinesisanalyticsv2"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_kinesisfirehose": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.KinesisFirehose"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.kinesisfirehose"
+            },
+            "python": {
+              "module": "aws_cdk.aws_kinesisfirehose"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_kinesisvideo": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.KinesisVideo"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.kinesisvideo"
+            },
+            "python": {
+              "module": "aws_cdk.aws_kinesisvideo"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_kms": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.KMS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.kms"
+            },
+            "python": {
+              "module": "aws_cdk.aws_kms"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_lakeformation": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.LakeFormation"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.lakeformation"
+            },
+            "python": {
+              "module": "aws_cdk.aws_lakeformation"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_lambda": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Lambda"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.lambda"
+            },
+            "python": {
+              "module": "aws_cdk.aws_lambda"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_lambda_destinations": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Lambda.Destinations"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.lambda.destinations"
+            },
+            "python": {
+              "module": "aws_cdk.aws_lambda_destinations"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_lambda_event_sources": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Lambda.EventSources"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.lambda.eventsources"
+            },
+            "python": {
+              "module": "aws_cdk.aws_lambda_event_sources"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_lambda_nodejs": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Lambda.Nodejs"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.lambda.nodejs"
+            },
+            "python": {
+              "module": "aws_cdk.aws_lambda_nodejs"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_lex": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Lex"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.lex"
+            },
+            "python": {
+              "module": "aws_cdk.aws_lex"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_licensemanager": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.LicenseManager"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.licensemanager"
+            },
+            "python": {
+              "module": "aws_cdk.aws_licensemanager"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_lightsail": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Lightsail"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.lightsail"
+            },
+            "python": {
+              "module": "aws_cdk.aws_lightsail"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_location": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Location"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.location"
+            },
+            "python": {
+              "module": "aws_cdk.aws_location"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_logs": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Logs"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.logs"
+            },
+            "python": {
+              "module": "aws_cdk.aws_logs"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_logs_destinations": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Logs.Destinations"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.logs.destinations"
+            },
+            "python": {
+              "module": "aws_cdk.aws_logs_destinations"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_lookoutequipment": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.LookoutEquipment"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.lookoutequipment"
+            },
+            "python": {
+              "module": "aws_cdk.aws_lookoutequipment"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_lookoutmetrics": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.LookoutMetrics"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.lookoutmetrics"
+            },
+            "python": {
+              "module": "aws_cdk.aws_lookoutmetrics"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_lookoutvision": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.LookoutVision"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.lookoutvision"
+            },
+            "python": {
+              "module": "aws_cdk.aws_lookoutvision"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_macie": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Macie"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.macie"
+            },
+            "python": {
+              "module": "aws_cdk.aws_macie"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_managedblockchain": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ManagedBlockchain"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.managedblockchain"
+            },
+            "python": {
+              "module": "aws_cdk.aws_managedblockchain"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_mediaconnect": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.MediaConnect"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.mediaconnect"
+            },
+            "python": {
+              "module": "aws_cdk.aws_mediaconnect"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_mediaconvert": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.MediaConvert"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.mediaconvert"
+            },
+            "python": {
+              "module": "aws_cdk.aws_mediaconvert"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_medialive": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.MediaLive"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.medialive"
+            },
+            "python": {
+              "module": "aws_cdk.aws_medialive"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_mediapackage": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.MediaPackage"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.mediapackage"
+            },
+            "python": {
+              "module": "aws_cdk.aws_mediapackage"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_mediastore": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.MediaStore"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.mediastore"
+            },
+            "python": {
+              "module": "aws_cdk.aws_mediastore"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_mediatailor": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.MediaTailor"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.mediatailor"
+            },
+            "python": {
+              "module": "aws_cdk.aws_mediatailor"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_memorydb": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.MemoryDB"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.memorydb"
+            },
+            "python": {
+              "module": "aws_cdk.aws_memorydb"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_msk": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.MSK"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.msk"
+            },
+            "python": {
+              "module": "aws_cdk.aws_msk"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_mwaa": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.MWAA"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.mwaa"
+            },
+            "python": {
+              "module": "aws_cdk.aws_mwaa"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_neptune": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Neptune"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.neptune"
+            },
+            "python": {
+              "module": "aws_cdk.aws_neptune"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_networkfirewall": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.NetworkFirewall"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.networkfirewall"
+            },
+            "python": {
+              "module": "aws_cdk.aws_networkfirewall"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_networkmanager": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.NetworkManager"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.networkmanager"
+            },
+            "python": {
+              "module": "aws_cdk.aws_networkmanager"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_nimblestudio": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.NimbleStudio"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.nimblestudio"
+            },
+            "python": {
+              "module": "aws_cdk.aws_nimblestudio"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_opensearchservice": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.OpenSearchService"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.opensearchservice"
+            },
+            "python": {
+              "module": "aws_cdk.aws_opensearchservice"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_opsworks": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.OpsWorks"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.opsworks"
+            },
+            "python": {
+              "module": "aws_cdk.aws_opsworks"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_opsworkscm": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.OpsWorksCM"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.opsworkscm"
+            },
+            "python": {
+              "module": "aws_cdk.aws_opsworkscm"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_panorama": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Panorama"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.panorama"
+            },
+            "python": {
+              "module": "aws_cdk.aws_panorama"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_personalize": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Personalize"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.personalize"
+            },
+            "python": {
+              "module": "aws_cdk.aws_personalize"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_pinpoint": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Pinpoint"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.pinpoint"
+            },
+            "python": {
+              "module": "aws_cdk.aws_pinpoint"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_pinpointemail": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.PinpointEmail"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.pinpointemail"
+            },
+            "python": {
+              "module": "aws_cdk.aws_pinpointemail"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_qldb": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.QLDB"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.qldb"
+            },
+            "python": {
+              "module": "aws_cdk.aws_qldb"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_quicksight": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.QuickSight"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.quicksight"
+            },
+            "python": {
+              "module": "aws_cdk.aws_quicksight"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ram": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.RAM"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ram"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ram"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_rds": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.RDS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.rds"
+            },
+            "python": {
+              "module": "aws_cdk.aws_rds"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_redshift": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Redshift"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.redshift"
+            },
+            "python": {
+              "module": "aws_cdk.aws_redshift"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_refactorspaces": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.RefactorSpaces"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.refactorspaces"
+            },
+            "python": {
+              "module": "aws_cdk.aws_refactorspaces"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_rekognition": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Rekognition"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.rekognition"
+            },
+            "python": {
+              "module": "aws_cdk.aws_rekognition"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_resiliencehub": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ResilienceHub"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.resiliencehub"
+            },
+            "python": {
+              "module": "aws_cdk.aws_resiliencehub"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_resourcegroups": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ResourceGroups"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.resourcegroups"
+            },
+            "python": {
+              "module": "aws_cdk.aws_resourcegroups"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_robomaker": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.RoboMaker"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.robomaker"
+            },
+            "python": {
+              "module": "aws_cdk.aws_robomaker"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_route53": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Route53"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.route53"
+            },
+            "python": {
+              "module": "aws_cdk.aws_route53"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_route53_patterns": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Route53.Patterns"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.route53.patterns"
+            },
+            "python": {
+              "module": "aws_cdk.aws_route53_patterns"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_route53_targets": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Route53.Targets"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.route53.targets"
+            },
+            "python": {
+              "module": "aws_cdk.aws_route53_targets"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_route53recoverycontrol": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Route53RecoveryControl"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.route53recoverycontrol"
+            },
+            "python": {
+              "module": "aws_cdk.aws_route53recoverycontrol"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_route53recoveryreadiness": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Route53RecoveryReadiness"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.route53recoveryreadiness"
+            },
+            "python": {
+              "module": "aws_cdk.aws_route53recoveryreadiness"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_route53resolver": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Route53Resolver"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.route53resolver"
+            },
+            "python": {
+              "module": "aws_cdk.aws_route53resolver"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_rum": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.RUM"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.rum"
+            },
+            "python": {
+              "module": "aws_cdk.aws_rum"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_s3": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.S3"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.s3"
+            },
+            "python": {
+              "module": "aws_cdk.aws_s3"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_s3_assets": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.S3.Assets"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.s3.assets"
+            },
+            "python": {
+              "module": "aws_cdk.aws_s3_assets"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_s3_deployment": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.S3.Deployment"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.s3.deployment"
+            },
+            "python": {
+              "module": "aws_cdk.aws_s3_deployment"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_s3_notifications": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.S3.Notifications"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.s3.notifications"
+            },
+            "python": {
+              "module": "aws_cdk.aws_s3_notifications"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_s3objectlambda": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.S3ObjectLambda"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.s3objectlambda"
+            },
+            "python": {
+              "module": "aws_cdk.aws_s3objectlambda"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_s3outposts": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.S3Outposts"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.s3outposts"
+            },
+            "python": {
+              "module": "aws_cdk.aws_s3outposts"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_sagemaker": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Sagemaker"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.sagemaker"
+            },
+            "python": {
+              "module": "aws_cdk.aws_sagemaker"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_sam": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SAM"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.sam"
+            },
+            "python": {
+              "module": "aws_cdk.aws_sam"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_sdb": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SDB"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.sdb"
+            },
+            "python": {
+              "module": "aws_cdk.aws_sdb"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_secretsmanager": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SecretsManager"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.secretsmanager"
+            },
+            "python": {
+              "module": "aws_cdk.aws_secretsmanager"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_securityhub": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SecurityHub"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.securityhub"
+            },
+            "python": {
+              "module": "aws_cdk.aws_securityhub"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_servicecatalog": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Servicecatalog"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.servicecatalog"
+            },
+            "python": {
+              "module": "aws_cdk.aws_servicecatalog"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_servicecatalogappregistry": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Servicecatalogappregistry"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.servicecatalogappregistry"
+            },
+            "python": {
+              "module": "aws_cdk.aws_servicecatalogappregistry"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_servicediscovery": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.ServiceDiscovery"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.servicediscovery"
+            },
+            "python": {
+              "module": "aws_cdk.aws_servicediscovery"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ses": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SES"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ses"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ses"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ses_actions": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SES.Actions"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ses.actions"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ses_actions"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_signer": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Signer"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.signer"
+            },
+            "python": {
+              "module": "aws_cdk.aws_signer"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_sns": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SNS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.sns"
+            },
+            "python": {
+              "module": "aws_cdk.aws_sns"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_sns_subscriptions": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SNS.Subscriptions"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.sns.subscriptions"
+            },
+            "python": {
+              "module": "aws_cdk.aws_sns_subscriptions"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_sqs": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SQS"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.sqs"
+            },
+            "python": {
+              "module": "aws_cdk.aws_sqs"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ssm": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SSM"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ssm"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ssm"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ssmcontacts": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SSMContacts"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ssmcontacts"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ssmcontacts"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_ssmincidents": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SSMIncidents"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.ssmincidents"
+            },
+            "python": {
+              "module": "aws_cdk.aws_ssmincidents"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_sso": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.SSO"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.sso"
+            },
+            "python": {
+              "module": "aws_cdk.aws_sso"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_stepfunctions": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.StepFunctions"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.stepfunctions"
+            },
+            "python": {
+              "module": "aws_cdk.aws_stepfunctions"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_stepfunctions_tasks": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.StepFunctions.Tasks"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.stepfunctions.tasks"
+            },
+            "python": {
+              "module": "aws_cdk.aws_stepfunctions_tasks"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_synthetics": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Synthetics"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.synthetics"
+            },
+            "python": {
+              "module": "aws_cdk.aws_synthetics"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_timestream": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Timestream"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.timestream"
+            },
+            "python": {
+              "module": "aws_cdk.aws_timestream"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_transfer": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Transfer"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.transfer"
+            },
+            "python": {
+              "module": "aws_cdk.aws_transfer"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_voiceid": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.VoiceID"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.voiceid"
+            },
+            "python": {
+              "module": "aws_cdk.aws_voiceid"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_waf": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.WAF"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.waf"
+            },
+            "python": {
+              "module": "aws_cdk.aws_waf"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_wafregional": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.WAFRegional"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.waf.regional"
+            },
+            "python": {
+              "module": "aws_cdk.aws_wafregional"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_wafv2": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.WAFv2"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.wafv2"
+            },
+            "python": {
+              "module": "aws_cdk.aws_wafv2"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_wisdom": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.Wisdom"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.wisdom"
+            },
+            "python": {
+              "module": "aws_cdk.aws_wisdom"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_workspaces": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.WorkSpaces"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.workspaces"
+            },
+            "python": {
+              "module": "aws_cdk.aws_workspaces"
+            }
+          }
+        },
+        "aws-cdk-lib.aws_xray": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.AWS.XRay"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.services.xray"
+            },
+            "python": {
+              "module": "aws_cdk.aws_xray"
+            }
+          }
+        },
+        "aws-cdk-lib.cloud_assembly_schema": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.CloudAssembly.Schema"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.cloudassembly.schema"
+            },
+            "python": {
+              "module": "aws_cdk.cloud_assembly_schema"
+            }
+          }
+        },
+        "aws-cdk-lib.cloudformation_include": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.CloudFormation.Include"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.cloudformation.include"
+            },
+            "python": {
+              "module": "aws_cdk.cloudformation_include"
+            }
+          }
+        },
+        "aws-cdk-lib.custom_resources": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.CustomResources"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.customresources"
+            },
+            "python": {
+              "module": "aws_cdk.custom_resources"
+            }
+          }
+        },
+        "aws-cdk-lib.cx_api": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.CXAPI"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.cxapi"
+            },
+            "python": {
+              "module": "aws_cdk.cx_api"
+            }
+          }
+        },
+        "aws-cdk-lib.lambda_layer_awscli": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.LambdaLayer.AwsCli"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.lambdalayer.awscli"
+            },
+            "python": {
+              "module": "aws_cdk.lambda_layer_awscli"
+            }
+          }
+        },
+        "aws-cdk-lib.lambda_layer_kubectl": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.LambdaLayer.Kubectl"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.lambdalayer.kubectl"
+            },
+            "python": {
+              "module": "aws_cdk.lambda_layer_kubectl"
+            }
+          }
+        },
+        "aws-cdk-lib.lambda_layer_node_proxy_agent": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.LambdaLayer.NodeProxyAgent"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.lambda.layer.node.proxy.agent"
+            },
+            "python": {
+              "module": "aws_cdk.lambda_layer_node_proxy_agent"
+            }
+          }
+        },
+        "aws-cdk-lib.pipelines": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.Pipelines"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.pipelines"
+            },
+            "python": {
+              "module": "aws_cdk.pipelines"
+            }
+          }
+        },
+        "aws-cdk-lib.region_info": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.RegionInfo"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.regioninfo"
+            },
+            "python": {
+              "module": "aws_cdk.region_info"
+            }
+          }
+        },
+        "aws-cdk-lib.triggers": {
+          "targets": {
+            "dotnet": {
+              "namespace": "Amazon.CDK.Triggers"
+            },
+            "java": {
+              "package": "software.amazon.awscdk.triggers"
+            },
+            "python": {
+              "module": "aws_cdk.triggers"
+            }
+          }
+        }
+      },
+      "targets": {
+        "dotnet": {
+          "iconUrl": "https://raw.githubusercontent.com/aws/aws-cdk/main/logo/default-256-dark.png",
+          "namespace": "Amazon.CDK",
+          "packageId": "Amazon.CDK.Lib"
+        },
+        "go": {
+          "moduleName": "github.com/aws/aws-cdk-go",
+          "packageName": "awscdk"
+        },
+        "java": {
+          "maven": {
+            "artifactId": "aws-cdk-lib",
+            "groupId": "software.amazon.awscdk"
+          },
+          "package": "software.amazon.awscdk"
+        },
+        "js": {
+          "npm": "aws-cdk-lib"
+        },
+        "python": {
+          "distName": "aws-cdk-lib",
+          "module": "aws_cdk"
+        }
+      }
+    },
+    "constructs": {
+      "targets": {
+        "dotnet": {
+          "namespace": "Constructs",
+          "packageId": "Constructs"
+        },
+        "go": {
+          "moduleName": "github.com/aws/constructs-go"
+        },
+        "java": {
+          "maven": {
+            "artifactId": "constructs",
+            "groupId": "software.constructs"
+          },
+          "package": "software.constructs"
+        },
+        "js": {
+          "npm": "constructs"
+        },
+        "python": {
+          "distName": "constructs",
+          "module": "constructs"
+        }
+      }
+    }
+  },
+  "description": "Opinionated wrapper around CDK L1 Construct WebAcl",
+  "docs": {
+    "stability": "stable"
+  },
+  "homepage": "https://github.com/enfogroup/aws-cdk-waf.git",
+  "jsiiVersion": "1.59.0 (build eb02c92)",
+  "keywords": [
+    "aws",
+    "cdk",
+    "awscdk",
+    "waf",
+    "webacl"
+  ],
+  "license": "MIT",
+  "metadata": {
+    "jsii": {
+      "pacmak": {
+        "hasDefaultInterfaces": true
+      }
+    }
+  },
+  "name": "@enfo/webacl",
+  "readme": {
+    "markdown": "# Introduction\n\nThis package exposes an opinionated Construct for setting up an AWS WebAcl using the CDK. Five custom rules are ready to be enabled. If you are not using the custom rules this package will not bring you much value.\n\n# Installation\n\nInstall the package by running\n\n```bash\nnpm install @enfo/cdk-webacl\n```\n\n# Getting started\n\n## Quick start\n\nThis is example is the least amount of configuration you have to do in order for the WebAcl to be created\n\n```typescript\nimport { WebAcl, Scope } from '@enfo/cdk-webacl'\nimport { Stack } from 'aws-cdk-lib'\nimport { RestApi } from 'aws-cdk-lib/aws-apigateway'\nimport { CfnWebACLAssociation } from 'aws-cdk-lib/aws-wafv2'\nimport { Distribution } from 'aws-cdk-lib/aws-cloudfront'\n\nconst stack = new Stack()\nconst webacl = new WebAcl(stack, 'MyWebAcl', {\n  scope: Scope.REGIONAL,\n  metricName: 'my-metric',\n  defaultAction: {\n    allow: {}\n  }\n})\n  .enableIpBlockRule()\n  .enableRateLimitRule()\n  .enableIpReputationRule()\n  .enableManagedCoreRule()\n  .enableBadInputsRule()\n\n// associating it with an API\nconst api = new RestApi(stack, 'Api')\napi.root.addMethod('GET')\nnew CfnWebACLAssociation(this, 'ApiAssociation', {\n  webAclArn: webacl.attrArn,\n  resourceArn: `arn:aws:apigateway:${Stack.of(stack).region}::/restapis/${api.deploymentStage.restApi.restApiId}/stages/${api.deploymentStage.stageName}`\n});\n\n// associating it with a CloudFront Distribution\nnew Distribution(stack, 'Distribution', {\n  webAclId: webacl.attrArn,\n  // more properties\n})\n```\n\n## Configuration options\n\nThe WebAcl and all rules can be configured.\n\n### WebAcl configuration\n\nThe WebAcl Construct takes an object with the interface WebAclProps which supports all properties from CfnWebAclProps except:\n\n* scope, this has been replaced with an enum instead of a string\n* visibilityConfig, this has been removed and its properties flattened into WebAclProps. Only metricName is mandatory\n\nExample of unique configuration options unique to WebAcl:\n\n```typescript\nnew WebAcl(stack, 'MyWebAcl', {\n  scope: Scope.CLOUDFRONT,\n  metricName: 'my-metric',\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true,\n  defaultAction: { // not unique but must be included\n    allow: {}\n  }\n})\n```\n\n### Rules configurations\n\nYou can only enable a rule **ONCE**. Attempting to enable a rule twice will result in an Error being thrown.\n\nAll rules share the same base interface. The following properties have been modified from CfnWebACL.RuleProperty:\n\n* name, no longer mandatory, has a rule specific default\n* priority, no longer mandatory, has a rule specific default\n* statement, removed and some properties flattered into rule properties for rules using AWS Managed Rule Groups ( IP Reputation, Managed Core and Bad Inputs)\n* visibilityConfig, removed and properties flatted into rule properties\n* action, removed from all rules but IP Block\n* overrideAction, set to `{ none: {} }` on all rules but IP Block\n\n### enableIpBlockRule configuration\n\nYou can read about IP set rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-ipset-match.html). The IP Block rule supports more properties than other rules. These have been grabbed from CfnIPSetProps, some have been replaced, others removed:\n\n* ipSetName, name you want for the IP Set\n* ipSetDescription, description you want for the IP Set\n* addresses, no longer mandatory\n* ipAddressVersion, replaced with enum instead of a string\n* ipSetTags\n\nExample of enableIpBlockRule options:\n\n```typescript\nnew WebAcl(...)\n.enableIpBlockRule({\n  name: 'cool-name', // default 'ip-block'\n  priority: 1, // default 10\n  metricName: 'something', // default 'ip-block'\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true,\n  action: {\n    allow: {}\n  }\n})\n```\n\nCustomizing the IP Set:\n\n```typescript\nnew WebAcl(stack, 'WebAcl', {\n  scope: Scope.REGIONAL,\n  metricName: 'something',\n  defaultAction: {\n    allow: {}\n  }\n})\n  .enableIpBlockRule({\n    ipSetName: 'my-set',\n    ipSetDescription: 'desc',\n    addresses: ['2001:0db8:85a3:0000:0000:8a2e:0370:7334'],\n    ipAddressVersion: IpAddressVersion.IPV6,\n    ipSetTags: [\n      {\n        key: 'key!',\n        value: 'value!'\n      }\n    ]\n  })\n```\n\nYou can also supply your own IP Set:\n\n```typescript\nconst ipSet = new CfnIPSet(stack, 'MySet', {\n  scope: 'REGIONAL',\n  name: 'my-set',\n  addresses: [],\n  ipAddressVersion: 'IPV4'\n})\n\nnew WebAcl(stack, 'WebAcl', {\n  scope: Scope.REGIONAL,\n  metricName: 'something',\n  defaultAction: {\n    allow: {}\n  }\n})\n  .enableIpBlockRule({\n    ipSet\n  })\n```\n\nIf an IP Set is supplied WebAcl will not create one\n\n### enableRateLimitRule configuration\n\nYou can read about rate limit rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-rate-based.html). The Rate Limit rule supports one property extra than the other rules:\n\n* rateLimit, defaults to 1000\n\nExample of options:\n\n```typescript\nnew WebAcl(...)\n.enableRateLimitRule({\n  name: 'cool-name', // default 'rate-limit'\n  priority: 1, // default 20\n  metricName: 'something', // default 'rate-limit'\n  rateLimit: 1337,\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true\n})\n```\n\n### enableIpReputationRule configuration\n\nYou can read about IP reputation rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-ip-rep.html). Example of enableIpReputationRule options:\n\n```typescript\nnew WebAcl(...)\n.enableIpReputationRule({\n  name: 'cool-name', // default 'ip-reputation'\n  priority: 1, // default 30\n  metricName: 'something', // default 'ip-reputation'\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true,\n  excludedRules: [{ name: 'wow' }],\n  managedRuleGroupConfigs: [{ loginPath: 'login!' }],\n  scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'NotReals' } }\n})\n```\n\n### enableManagedCoreRule configuration\n\nYou can read about the AWS core rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-baseline.html). Example of enableManagedCoreRule options:\n\n```typescript\nnew WebAcl(...)\n.enableManagedCoreRule({\n  name: 'cool-name', // default 'managed-core'\n  priority: 1, // default 40\n  metricName: 'something', // default 'managed-core'\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true,\n  excludedRules: [{ name: 'wow' }],\n  managedRuleGroupConfigs: [{ loginPath: 'login!' }],\n  scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'NotReals' } }\n})\n```\n\n### enableBadInputsRule configuration\n\nYou can read about the AWS bad inputs rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-baseline.html#aws-managed-rule-groups-baseline-known-bad-inputs). Example of enableBadInputsRule options:\n\n```typescript\nnew WebAcl(...)\n.enableBadInputsRule({\n  name: 'cool-name', // default 'bad-inputs'\n  priority: 1, // default 50\n  metricName: 'something', // default 'bad-inputs'\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true,\n  excludedRules: [{ name: 'wow' }],\n  managedRuleGroupConfigs: [{ loginPath: 'login!' }],\n  scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'NotReals' } }\n})\n```\n"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enfogroup/aws-cdk-waf.git"
+  },
+  "schema": "jsii/0.10.0",
+  "targets": {
+    "js": {
+      "npm": "@enfo/webacl"
+    }
+  },
+  "types": {
+    "@enfo/webacl.BaseRuleManagedProps": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable",
+        "summary": "Base props for AWS managed rules."
+      },
+      "fqn": "@enfo/webacl.BaseRuleManagedProps",
+      "interfaces": [
+        "@enfo/webacl.BaseRuleProps"
+      ],
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 245
+      },
+      "name": "BaseRuleManagedProps",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-excludedrules"
+            },
+            "remarks": "When you exclude a rule, AWS WAF evaluates it exactly as it would if the rule action setting were `Count` . This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.",
+            "stability": "stable",
+            "summary": "The rules in the referenced rule group whose actions are set to `Count` ."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 252
+          },
+          "name": "excludedRules",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                },
+                {
+                  "collection": {
+                    "elementtype": {
+                      "union": {
+                        "types": [
+                          {
+                            "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.ExcludedRuleProperty"
+                          },
+                          {
+                            "fqn": "aws-cdk-lib.IResolvable"
+                          }
+                        ]
+                      }
+                    },
+                    "kind": "array"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-managedrulegroupconfigs"
+            },
+            "remarks": "Use this for the account takeover prevention managed rule group `AWSManagedRulesATPRuleSet` , to provide information about the sign-in page of your application.\n\nYou can provide multiple individual `ManagedRuleGroupConfig` objects for any rule group configuration, for example `UsernameField` and `PasswordField` . The configuration that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration objects: `LoginPath` , `PasswordField` , `PayloadType` and `UsernameField` .",
+            "stability": "stable",
+            "summary": "Additional information that's used by a managed rule group. Most managed rule groups don't require this."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 262
+          },
+          "name": "managedRuleGroupConfigs",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                },
+                {
+                  "collection": {
+                    "elementtype": {
+                      "union": {
+                        "types": [
+                          {
+                            "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.ManagedRuleGroupConfigProperty"
+                          },
+                          {
+                            "fqn": "aws-cdk-lib.IResolvable"
+                          }
+                        ]
+                      }
+                    },
+                    "kind": "array"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-scopedownstatement"
+            },
+            "remarks": "Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable `Statement` in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.",
+            "stability": "stable",
+            "summary": "An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 268
+          },
+          "name": "scopeDownStatement",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.StatementProperty"
+                },
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "symbolId": "lib/models:BaseRuleManagedProps"
+    },
+    "@enfo/webacl.BaseRuleProps": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable",
+        "summary": "Base props for all rules props."
+      },
+      "fqn": "@enfo/webacl.BaseRuleProps",
+      "interfaces": [
+        "@enfo/webacl.VisibilityConfig"
+      ],
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 183
+      },
+      "name": "BaseRuleProps",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-captchaconfig"
+            },
+            "remarks": "If you don't specify this, AWS WAF uses the `CAPTCHA` configuration that's defined for the web ACL.",
+            "stability": "stable",
+            "summary": "Specifies how AWS WAF should handle `CAPTCHA` evaluations."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 189
+          },
+          "name": "captchaConfig",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.CaptchaConfigProperty"
+                },
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-overrideaction"
+            },
+            "remarks": "This is used only for rules whose statements reference a rule group. Rule statements that reference a rule group are `RuleGroupReferenceStatement` and `ManagedRuleGroupStatement` .\n\nSet the override action to none to leave the rule group rule actions in effect. Set it to count to only count matches, regardless of the rule action settings.\n\nYou must set either this `OverrideAction` setting or the `Action` setting, but not both:\n\n- If the rule statement references a rule group, you must set this override action setting and you must not set the rule's action setting.\n- If the rule statement doesn't reference a rule group, you must set the rule action setting and you must not set the rule's override action setting.",
+            "stability": "stable",
+            "summary": "The override action to apply to the rules in a rule group, instead of the individual rule action settings."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 202
+          },
+          "name": "overrideAction",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.OverrideActionProperty"
+                },
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-rulelabels"
+            },
+            "remarks": "AWS WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.\n\nRules that run after this rule in the web ACL can match against these labels using a `LabelMatchStatement` .\n\nFor each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:\n\n- Separate each component of the label with a colon.\n- Each namespace or name can have up to 128 characters.\n- You can specify up to 5 namespaces in a label.\n- Don't use the following reserved words in your label specification: `aws` , `waf` , `managed` , `rulegroup` , `webacl` , `regexpatternset` , or `ipset` .\n\nFor example, `myLabelName` or `nameSpace1:nameSpace2:myLabelName` .",
+            "stability": "stable",
+            "summary": "Labels to apply to web requests that match the rule match statement."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 219
+          },
+          "name": "ruleLabels",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                },
+                {
+                  "collection": {
+                    "elementtype": {
+                      "union": {
+                        "types": [
+                          {
+                            "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.LabelProperty"
+                          },
+                          {
+                            "fqn": "aws-cdk-lib.IResolvable"
+                          }
+                        ]
+                      }
+                    },
+                    "kind": "array"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "symbolId": "lib/models:BaseRuleProps"
+    },
+    "@enfo/webacl.BaseRuleWithActionProps": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable",
+        "summary": "Base rule props with action included."
+      },
+      "fqn": "@enfo/webacl.BaseRuleWithActionProps",
+      "interfaces": [
+        "@enfo/webacl.BaseRuleProps"
+      ],
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 225
+      },
+      "name": "BaseRuleWithActionProps",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-action"
+            },
+            "remarks": "Settings at the web ACL level can override the rule action setting.\n\nThis is used only for rules whose statements don't reference a rule group. Rule statements that reference a rule group are `RuleGroupReferenceStatement` and `ManagedRuleGroupStatement` .\n\nYou must set either this `Action` setting or the rule's `OverrideAction` , but not both:\n\n- If the rule statement doesn't reference a rule group, you must set this rule action setting and you must not set the rule's override action setting.\n- If the rule statement references a rule group, you must not set this action setting, because the actions are already set on the rules inside the rule group. You must set the rule's override action setting to indicate specifically whether to override the actions that are set on the rules in the rule group.",
+            "stability": "stable",
+            "summary": "The action that AWS WAF should take on a web request when it matches the rule's statement."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 239
+          },
+          "name": "action",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.RuleActionProperty"
+                },
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "symbolId": "lib/models:BaseRuleWithActionProps"
+    },
+    "@enfo/webacl.EnableBadInputsRule": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable",
+        "summary": "Properties when enabling the Bad Inputs rule."
+      },
+      "fqn": "@enfo/webacl.EnableBadInputsRule",
+      "interfaces": [
+        "@enfo/webacl.BaseRuleManagedProps"
+      ],
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 408
+      },
+      "name": "EnableBadInputsRule",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname"
+            },
+            "default": "'bad-inputs'",
+            "stability": "stable",
+            "summary": "Metric name for default action."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 415
+          },
+          "name": "metricName",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-name"
+            },
+            "default": "'bad-inputs'",
+            "remarks": "You can't change the name of a `Rule` after you create it.",
+            "stability": "stable",
+            "summary": "The name of the rule."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 422
+          },
+          "name": "name",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-priority"
+            },
+            "default": "50",
+            "remarks": "AWS WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.",
+            "stability": "stable",
+            "summary": "If you define more than one `Rule` in a `WebACL` , AWS WAF evaluates each request against the `Rules` in order based on the value of `Priority` ."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 429
+          },
+          "name": "priority",
+          "optional": true,
+          "type": {
+            "primitive": "number"
+          }
+        }
+      ],
+      "symbolId": "lib/models:EnableBadInputsRule"
+    },
+    "@enfo/webacl.EnableIpBlockProps": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable",
+        "summary": "Properties when enabling the IP Block rule."
+      },
+      "fqn": "@enfo/webacl.EnableIpBlockProps",
+      "interfaces": [
+        "@enfo/webacl.BaseRuleWithActionProps",
+        "@enfo/webacl.IpSetProps"
+      ],
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 274
+      },
+      "name": "EnableIpBlockProps",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "remarks": "If none is supplied one will be created using the optional IP Set props",
+            "stability": "stable",
+            "summary": "Optional IP Set to pass for usage."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 299
+          },
+          "name": "ipSet",
+          "optional": true,
+          "type": {
+            "fqn": "aws-cdk-lib.aws_wafv2.CfnIPSet"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname"
+            },
+            "default": "'ip-block'",
+            "stability": "stable",
+            "summary": "Metric name for default action."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 281
+          },
+          "name": "metricName",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-name"
+            },
+            "default": "'ip-block'",
+            "remarks": "You can't change the name of a `Rule` after you create it.",
+            "stability": "stable",
+            "summary": "The name of the rule."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 288
+          },
+          "name": "name",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-priority"
+            },
+            "default": "10",
+            "remarks": "AWS WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.",
+            "stability": "stable",
+            "summary": "If you define more than one `Rule` in a `WebACL` , AWS WAF evaluates each request against the `Rules` in order based on the value of `Priority` ."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 295
+          },
+          "name": "priority",
+          "optional": true,
+          "type": {
+            "primitive": "number"
+          }
+        }
+      ],
+      "symbolId": "lib/models:EnableIpBlockProps"
+    },
+    "@enfo/webacl.EnableIpReputationRuleProps": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable",
+        "summary": "Properties when enabling the IP Reputation rule."
+      },
+      "fqn": "@enfo/webacl.EnableIpReputationRuleProps",
+      "interfaces": [
+        "@enfo/webacl.BaseRuleManagedProps"
+      ],
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 354
+      },
+      "name": "EnableIpReputationRuleProps",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname"
+            },
+            "default": "'ip-reputation'",
+            "stability": "stable",
+            "summary": "Metric name for default action."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 361
+          },
+          "name": "metricName",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-name"
+            },
+            "default": "'ip-reputation'",
+            "remarks": "You can't change the name of a `Rule` after you create it.",
+            "stability": "stable",
+            "summary": "The name of the rule."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 368
+          },
+          "name": "name",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-priority"
+            },
+            "default": "30",
+            "remarks": "AWS WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.",
+            "stability": "stable",
+            "summary": "If you define more than one `Rule` in a `WebACL` , AWS WAF evaluates each request against the `Rules` in order based on the value of `Priority` ."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 375
+          },
+          "name": "priority",
+          "optional": true,
+          "type": {
+            "primitive": "number"
+          }
+        }
+      ],
+      "symbolId": "lib/models:EnableIpReputationRuleProps"
+    },
+    "@enfo/webacl.EnableManagedCoreRuleProps": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable",
+        "summary": "Properties when enabling the Managed Core rule."
+      },
+      "fqn": "@enfo/webacl.EnableManagedCoreRuleProps",
+      "interfaces": [
+        "@enfo/webacl.BaseRuleManagedProps"
+      ],
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 381
+      },
+      "name": "EnableManagedCoreRuleProps",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname"
+            },
+            "default": "'managed-core'",
+            "stability": "stable",
+            "summary": "Metric name for default action."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 388
+          },
+          "name": "metricName",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-name"
+            },
+            "default": "'managed-core'",
+            "remarks": "You can't change the name of a `Rule` after you create it.",
+            "stability": "stable",
+            "summary": "The name of the rule."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 395
+          },
+          "name": "name",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-priority"
+            },
+            "default": "40",
+            "remarks": "AWS WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.",
+            "stability": "stable",
+            "summary": "If you define more than one `Rule` in a `WebACL` , AWS WAF evaluates each request against the `Rules` in order based on the value of `Priority` ."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 402
+          },
+          "name": "priority",
+          "optional": true,
+          "type": {
+            "primitive": "number"
+          }
+        }
+      ],
+      "symbolId": "lib/models:EnableManagedCoreRuleProps"
+    },
+    "@enfo/webacl.EnableRateLimitRuleProps": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable",
+        "summary": "Properties when enabling the Rate Limit rule."
+      },
+      "fqn": "@enfo/webacl.EnableRateLimitRuleProps",
+      "interfaces": [
+        "@enfo/webacl.BaseRuleProps"
+      ],
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 305
+      },
+      "name": "EnableRateLimitRuleProps",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-action"
+            },
+            "default": "{ block: { customResponse: { responseCode: 429 } } }",
+            "remarks": "Settings at the web ACL level can override the rule action setting.\n\nThis is used only for rules whose statements don't reference a rule group. Rule statements that reference a rule group are `RuleGroupReferenceStatement` and `ManagedRuleGroupStatement` .\n\nYou must set either this `Action` setting or the rule's `OverrideAction` , but not both:\n\n- If the rule statement doesn't reference a rule group, you must set this rule action setting and you must not set the rule's override action setting.\n- If the rule statement references a rule group, you must not set this action setting, because the actions are already set on the rules inside the rule group. You must set the rule's override action setting to indicate specifically whether to override the actions that are set on the rules in the rule group.",
+            "stability": "stable",
+            "summary": "The action that AWS WAF should take on a web request when it matches the rule's statement."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 341
+          },
+          "name": "action",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.RuleActionProperty"
+                },
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname"
+            },
+            "default": "'rate-limit'",
+            "stability": "stable",
+            "summary": "Metric name for default action."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 312
+          },
+          "name": "metricName",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-name"
+            },
+            "default": "'rate-limit'",
+            "remarks": "You can't change the name of a `Rule` after you create it.",
+            "stability": "stable",
+            "summary": "The name of the rule."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 319
+          },
+          "name": "name",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-priority"
+            },
+            "default": "20",
+            "remarks": "AWS WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.",
+            "stability": "stable",
+            "summary": "If you define more than one `Rule` in a `WebACL` , AWS WAF evaluates each request against the `Rules` in order based on the value of `Priority` ."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 326
+          },
+          "name": "priority",
+          "optional": true,
+          "type": {
+            "primitive": "number"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-rate-based.html"
+            },
+            "default": "1000",
+            "stability": "stable",
+            "summary": "The rate limit for the rule."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 348
+          },
+          "name": "rateLimit",
+          "optional": true,
+          "type": {
+            "primitive": "number"
+          }
+        }
+      ],
+      "symbolId": "lib/models:EnableRateLimitRuleProps"
+    },
+    "@enfo/webacl.IpAddressVersion": {
+      "assembly": "@enfo/webacl",
+      "docs": {
+        "stability": "stable",
+        "summary": "Available IP address versions."
+      },
+      "fqn": "@enfo/webacl.IpAddressVersion",
+      "kind": "enum",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 40
+      },
+      "members": [
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "IP version 4."
+          },
+          "name": "IPV4"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "IP version 6."
+          },
+          "name": "IPV6"
+        }
+      ],
+      "name": "IpAddressVersion",
+      "symbolId": "lib/models:IpAddressVersion"
+    },
+    "@enfo/webacl.IpSetProps": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable",
+        "summary": "Properties when creating an IP Set."
+      },
+      "fqn": "@enfo/webacl.IpSetProps",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 54
+      },
+      "name": "IpSetProps",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-addresses"
+            },
+            "default": "[]",
+            "remarks": "AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.\n\nExample address strings:\n\n- To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify `192.0.2.44/32` .\n- To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify `192.0.2.0/24` .\n- To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify `1111:0000:0000:0000:0000:0000:0000:0111/128` .\n- To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify `1111:0000:0000:0000:0000:0000:0000:0000/64` .\n\nFor more information about CIDR notation, see the Wikipedia entry [Classless Inter-Domain Routing](https://docs.aws.amazon.com/https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) .\n\nExample JSON `Addresses` specifications:\n\n- Empty array: `\"Addresses\": []`\n- Array with one address: `\"Addresses\": [\"192.0.2.44/32\"]`\n- Array with three addresses: `\"Addresses\": [\"192.0.2.44/32\", \"192.0.2.0/24\", \"192.0.0.0/16\"]`\n- INVALID specification: `\"Addresses\": [\"\"]` INVALID",
+            "stability": "stable",
+            "summary": "Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 77
+          },
+          "name": "addresses",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-ipaddressversion"
+            },
+            "default": "'IPV4'",
+            "stability": "stable",
+            "summary": "The version of the IP addresses, either `IPV4` or `IPV6` ."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 84
+          },
+          "name": "ipAddressVersion",
+          "optional": true,
+          "type": {
+            "fqn": "@enfo/webacl.IpAddressVersion"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-description"
+            },
+            "stability": "stable",
+            "summary": "A description of the IP set that helps with identification."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 90
+          },
+          "name": "ipSetDescription",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-name"
+            },
+            "remarks": "You cannot change the name of an `IPSet` after you create it.",
+            "stability": "stable",
+            "summary": "The name of the IP set."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 96
+          },
+          "name": "ipSetName",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-tags"
+            },
+            "remarks": "The key:value pair can be anything you define. Typically, the tag key represents a category (such as \"environment\") and the tag value represents a specific value within that category (such as \"test,\" \"development,\" or \"production\"). You can add up to 50 tags to each AWS resource.\n\n> To modify tags on existing resources, use the AWS WAF APIs or command line interface. With AWS CloudFormation , you can only add tags to AWS WAF resources during resource creation.",
+            "stability": "stable",
+            "summary": "Key:value pairs associated with an AWS resource."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 104
+          },
+          "name": "ipSetTags",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "fqn": "aws-cdk-lib.CfnTag"
+              },
+              "kind": "array"
+            }
+          }
+        }
+      ],
+      "symbolId": "lib/models:IpSetProps"
+    },
+    "@enfo/webacl.Scope": {
+      "assembly": "@enfo/webacl",
+      "docs": {
+        "stability": "stable",
+        "summary": "Available resource associations."
+      },
+      "fqn": "@enfo/webacl.Scope",
+      "kind": "enum",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 26
+      },
+      "members": [
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Used to allow associations with CloudFront Distributions."
+          },
+          "name": "CLOUDFRONT"
+        },
+        {
+          "docs": {
+            "remarks": "A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AWS AppSync GraphQL API.",
+            "stability": "stable",
+            "summary": "Used to associate the WAF with applications other than CloudFront."
+          },
+          "name": "REGIONAL"
+        }
+      ],
+      "name": "Scope",
+      "symbolId": "lib/models:Scope"
+    },
+    "@enfo/webacl.VisibilityConfig": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@enfo/webacl.VisibilityConfig",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 4
+      },
+      "name": "VisibilityConfig",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-cloudwatchmetricsenabled"
+            },
+            "default": "true",
+            "remarks": "For the list of available metrics, see [AWS WAF Metrics](https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics) .",
+            "stability": "stable",
+            "summary": "A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 12
+          },
+          "name": "cloudWatchMetricsEnabled",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "primitive": "boolean"
+                },
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-sampledrequestsenabled"
+            },
+            "default": "true",
+            "remarks": "You can view the sampled requests through the AWS WAF console.",
+            "stability": "stable",
+            "summary": "A boolean indicating whether AWS WAF should store a sampling of the web requests that match the rules."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 20
+          },
+          "name": "sampledRequestsEnabled",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "primitive": "boolean"
+                },
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "symbolId": "lib/models:VisibilityConfig"
+    },
+    "@enfo/webacl.WebAcl": {
+      "assembly": "@enfo/webacl",
+      "base": "constructs.Construct",
+      "docs": {
+        "stability": "stable",
+        "summary": "WebAcl with methods for enabling opinionated rules."
+      },
+      "fqn": "@enfo/webacl.WebAcl",
+      "initializer": {
+        "docs": {
+          "stability": "stable",
+          "summary": "Creates a new WebAcl."
+        },
+        "locationInModule": {
+          "filename": "lib/waf.ts",
+          "line": 54
+        },
+        "parameters": [
+          {
+            "docs": {
+              "summary": "A CDK Construct."
+            },
+            "name": "scope",
+            "type": {
+              "fqn": "constructs.Construct"
+            }
+          },
+          {
+            "docs": {
+              "summary": "Id for the Construct."
+            },
+            "name": "id",
+            "type": {
+              "primitive": "string"
+            }
+          },
+          {
+            "docs": {
+              "summary": "See interface definition."
+            },
+            "name": "props",
+            "type": {
+              "fqn": "@enfo/webacl.WebAclProps"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "lib/waf.ts",
+        "line": 24
+      },
+      "methods": [
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Sets up a rule enabling AWSManagedRulesKnownBadInputsRuleSet."
+          },
+          "locationInModule": {
+            "filename": "lib/waf.ts",
+            "line": 268
+          },
+          "name": "enableBadInputsRule",
+          "parameters": [
+            {
+              "docs": {
+                "summary": "See interface definition."
+              },
+              "name": "props",
+              "optional": true,
+              "type": {
+                "fqn": "@enfo/webacl.EnableBadInputsRule"
+              }
+            }
+          ],
+          "returns": {
+            "type": {
+              "fqn": "@enfo/webacl.WebAcl"
+            }
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Sets up an IP Set and a rule to block IP addresses found in it Can be used in case IP addresses need to be blocked Action can be overwritten to enable custom responses or inverse the handling."
+          },
+          "locationInModule": {
+            "filename": "lib/waf.ts",
+            "line": 100
+          },
+          "name": "enableIpBlockRule",
+          "parameters": [
+            {
+              "docs": {
+                "summary": "See interface definition."
+              },
+              "name": "props",
+              "optional": true,
+              "type": {
+                "fqn": "@enfo/webacl.EnableIpBlockProps"
+              }
+            }
+          ],
+          "returns": {
+            "type": {
+              "fqn": "@enfo/webacl.WebAcl"
+            }
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Sets up a rule enabling AWSManagedRulesAmazonIpReputationList."
+          },
+          "locationInModule": {
+            "filename": "lib/waf.ts",
+            "line": 240
+          },
+          "name": "enableIpReputationRule",
+          "parameters": [
+            {
+              "docs": {
+                "summary": "See interface definition."
+              },
+              "name": "props",
+              "optional": true,
+              "type": {
+                "fqn": "@enfo/webacl.EnableIpReputationRuleProps"
+              }
+            }
+          ],
+          "returns": {
+            "type": {
+              "fqn": "@enfo/webacl.WebAcl"
+            }
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Sets up a rule enabling AWSManagedRulesCommonRuleSet."
+          },
+          "locationInModule": {
+            "filename": "lib/waf.ts",
+            "line": 254
+          },
+          "name": "enableManagedCoreRule",
+          "parameters": [
+            {
+              "docs": {
+                "summary": "See interface definition."
+              },
+              "name": "props",
+              "optional": true,
+              "type": {
+                "fqn": "@enfo/webacl.EnableManagedCoreRuleProps"
+              }
+            }
+          ],
+          "returns": {
+            "type": {
+              "fqn": "@enfo/webacl.WebAcl"
+            }
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Sets up a rate limiting rule."
+          },
+          "locationInModule": {
+            "filename": "lib/waf.ts",
+            "line": 154
+          },
+          "name": "enableRateLimitRule",
+          "parameters": [
+            {
+              "docs": {
+                "summary": "See interface definition."
+              },
+              "name": "props",
+              "optional": true,
+              "type": {
+                "fqn": "@enfo/webacl.EnableRateLimitRuleProps"
+              }
+            }
+          ],
+          "returns": {
+            "type": {
+              "fqn": "@enfo/webacl.WebAcl"
+            }
+          }
+        }
+      ],
+      "name": "WebAcl",
+      "properties": [
+        {
+          "docs": {
+            "remarks": "Used to associate the Web ACL with resources",
+            "stability": "stable",
+            "summary": "The Amazon Resource Name (ARN) of the Web ACL."
+          },
+          "locationInModule": {
+            "filename": "lib/waf.ts",
+            "line": 29
+          },
+          "name": "attrArn",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "The internal CfnWebACL."
+          },
+          "locationInModule": {
+            "filename": "lib/waf.ts",
+            "line": 33
+          },
+          "name": "cfnWebAcl",
+          "type": {
+            "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "IP Set used if the IP Block rule is enabled."
+          },
+          "locationInModule": {
+            "filename": "lib/waf.ts",
+            "line": 37
+          },
+          "name": "ipSet",
+          "optional": true,
+          "type": {
+            "fqn": "aws-cdk-lib.aws_wafv2.CfnIPSet"
+          }
+        }
+      ],
+      "symbolId": "lib/waf:WebAcl"
+    },
+    "@enfo/webacl.WebAclProps": {
+      "assembly": "@enfo/webacl",
+      "datatype": true,
+      "docs": {
+        "stability": "stable",
+        "summary": "Properties when creating a new WebAcl."
+      },
+      "fqn": "@enfo/webacl.WebAclProps",
+      "interfaces": [
+        "@enfo/webacl.VisibilityConfig"
+      ],
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "lib/models.ts",
+        "line": 110
+      },
+      "name": "WebAclProps",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-defaultaction"
+            },
+            "stability": "stable",
+            "summary": "The action to perform if none of the `Rules` contained in the `WebACL` match."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 116
+          },
+          "name": "defaultAction",
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.DefaultActionProperty"
+                },
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname"
+            },
+            "stability": "stable",
+            "summary": "Metric name for default action."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 170
+          },
+          "name": "metricName",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "Defines which type of resource this WAF should be associated with."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 164
+          },
+          "name": "scope",
+          "type": {
+            "fqn": "@enfo/webacl.Scope"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-captchaconfig"
+            },
+            "remarks": "If you don't specify this, AWS WAF uses its default settings for `CaptchaConfig` .",
+            "stability": "stable",
+            "summary": "Specifies how AWS WAF should handle `CAPTCHA` evaluations for rules that don't have their own `CaptchaConfig` settings."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 122
+          },
+          "name": "captchaConfig",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.CaptchaConfigProperty"
+                },
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-customresponsebodies"
+            },
+            "remarks": "When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL.\n\nFor information about customizing web requests and responses, see [Customizing web requests and responses in AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html) in the [AWS WAF Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) .\n\nFor information about the limits on count and size for custom request and response settings, see [AWS WAF quotas](https://docs.aws.amazon.com/waf/latest/developerguide/limits.html) in the [AWS WAF Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) .",
+            "stability": "stable",
+            "summary": "A map of custom response keys and content bodies."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 132
+          },
+          "name": "customResponseBodies",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                },
+                {
+                  "collection": {
+                    "elementtype": {
+                      "union": {
+                        "types": [
+                          {
+                            "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.CustomResponseBodyProperty"
+                          },
+                          {
+                            "fqn": "aws-cdk-lib.IResolvable"
+                          }
+                        ]
+                      }
+                    },
+                    "kind": "map"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-description"
+            },
+            "stability": "stable",
+            "summary": "A description of the web ACL that helps with identification."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 140
+          },
+          "name": "description",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-name"
+            },
+            "remarks": "You cannot change the name of a web ACL after you create it.",
+            "stability": "stable",
+            "summary": "The name of the web ACL."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 146
+          },
+          "name": "name",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-rules"
+            },
+            "remarks": "Each rule includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern how AWS WAF handles them.",
+            "stability": "stable",
+            "summary": "The rule statements used to identify the web requests that you want to allow, block, or count."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 152
+          },
+          "name": "rules",
+          "optional": true,
+          "type": {
+            "union": {
+              "types": [
+                {
+                  "fqn": "aws-cdk-lib.IResolvable"
+                },
+                {
+                  "collection": {
+                    "elementtype": {
+                      "union": {
+                        "types": [
+                          {
+                            "fqn": "aws-cdk-lib.aws_wafv2.CfnWebACL.RuleProperty"
+                          },
+                          {
+                            "fqn": "aws-cdk-lib.IResolvable"
+                          }
+                        ]
+                      }
+                    },
+                    "kind": "array"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "custom": {
+              "link": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-tags"
+            },
+            "remarks": "The key:value pair can be anything you define. Typically, the tag key represents a category (such as \"environment\") and the tag value represents a specific value within that category (such as \"test,\" \"development,\" or \"production\"). You can add up to 50 tags to each AWS resource.\n\n> To modify tags on existing resources, use the AWS WAF APIs or command line interface. With AWS CloudFormation , you can only add tags to AWS WAF resources during resource creation.",
+            "stability": "stable",
+            "summary": "Key:value pairs associated with an AWS resource."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "lib/models.ts",
+            "line": 160
+          },
+          "name": "tags",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "fqn": "aws-cdk-lib.CfnTag"
+              },
+              "kind": "array"
+            }
+          }
+        }
+      ],
+      "symbolId": "lib/models:WebAclProps"
+    }
+  },
+  "version": "0.0.1",
+  "fingerprint": "1eE+F2yZzy6wmL6ZdTKNd2x+j46NDy6QZ7jRnp0LhPI="
+}
