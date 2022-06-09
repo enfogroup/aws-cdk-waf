@@ -85,7 +85,7 @@ All rules share the same base interface. The following properties have been modi
 
 * name, no longer mandatory, has a rule specific default
 * priority, no longer mandatory, has a rule specific default
-* statement, removed, set for you
+* statement, removed and some properties flattered into rule properties
 * visibilityConfig, removed and properties flatted into rule properties
 * action, removed from all rules but IP Block
 * overrideAction, set to `{ none: {} }` on all rules but IP Block
@@ -195,7 +195,10 @@ new Fixme(...)
   priority: 1, // default 30
   metricName: 'something', // default 'ip-reputation'
   cloudWatchMetricsEnabled: true,
-  sampledRequestsEnabled: true
+  sampledRequestsEnabled: true,
+  excludedRules: [{ name: 'wow' }],
+  managedRuleGroupConfigs: [{ loginPath: 'login!' }],
+  scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'NotReals' } }
 })
 ```
 
@@ -210,7 +213,10 @@ new Fixme(...)
   priority: 1, // default 40
   metricName: 'something', // default 'managed-core'
   cloudWatchMetricsEnabled: true,
-  sampledRequestsEnabled: true
+  sampledRequestsEnabled: true,
+  excludedRules: [{ name: 'wow' }],
+  managedRuleGroupConfigs: [{ loginPath: 'login!' }],
+  scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'NotReals' } }
 })
 ```
 
@@ -225,6 +231,9 @@ new Fixme(...)
   priority: 1, // default 50
   metricName: 'something', // default 'bad-inputs'
   cloudWatchMetricsEnabled: true,
-  sampledRequestsEnabled: true
+  sampledRequestsEnabled: true,
+  excludedRules: [{ name: 'wow' }],
+  managedRuleGroupConfigs: [{ loginPath: 'login!' }],
+  scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'NotReals' } }
 })
 ```
