@@ -85,7 +85,7 @@ All rules share the same base interface. The following properties have been modi
 
 * name, no longer mandatory, has a rule specific default
 * priority, no longer mandatory, has a rule specific default
-* statement, removed and some properties flattered into rule properties
+* statement, removed and some properties flattered into rule properties for rules using AWS Managed Rule Groups ( IP Reputation, Managed Core and Bad Inputs)
 * visibilityConfig, removed and properties flatted into rule properties
 * action, removed from all rules but IP Block
 * overrideAction, set to `{ none: {} }` on all rules but IP Block
