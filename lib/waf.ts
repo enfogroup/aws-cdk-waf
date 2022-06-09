@@ -15,9 +15,9 @@ enum RULE_ID {
  */
 export class WebAcl extends Construct {
   /**
-   * The internal WebAcl
+   * The internal CfnWebACL
    */
-  public webAcl: CfnWebACL
+  public cfnWebAcl: CfnWebACL
   /**
    * IP Set used if the IP Block rule is enabled
    */
@@ -44,7 +44,7 @@ export class WebAcl extends Construct {
     const { cloudWatchMetricsEnabled = true, sampledRequestsEnabled = true, metricName, ...rest } = props
 
     this.ruleSet = new Set<RULE_ID>()
-    this.webAcl = new CfnWebACL(this, 'WebAcl', {
+    this.cfnWebAcl = new CfnWebACL(this, 'WebAcl', {
       ...rest,
       visibilityConfig: {
         cloudWatchMetricsEnabled,
@@ -55,15 +55,15 @@ export class WebAcl extends Construct {
   }
 
   private pushRule (rule: Rule): void {
-    if (!this.webAcl.rules) {
-      this.webAcl.rules = []
+    if (!this.cfnWebAcl.rules) {
+      this.cfnWebAcl.rules = []
     }
 
-    if (!('length' in this.webAcl.rules)) {
+    if (!('length' in this.cfnWebAcl.rules)) {
       // this could backfire the user supplies an IResolvable which results in an array. Not sure how to protect against it though
-      this.webAcl.rules = [this.webAcl.rules]
+      this.cfnWebAcl.rules = [this.cfnWebAcl.rules]
     }
-    this.webAcl.rules.push(rule)
+    this.cfnWebAcl.rules.push(rule)
   }
 
   private setRuleAsEnabled (ruleId: RULE_ID): void {

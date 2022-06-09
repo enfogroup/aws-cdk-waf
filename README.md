@@ -41,13 +41,13 @@ const fixme = new Fixme(stack, 'MyFixme', {
 const api = new RestApi(stack, 'Api')
 api.root.addMethod('GET')
 new CfnWebACLAssociation(this, 'ApiAssociation', {
-  webAclArn: fixme.webAcl.attrArn,
+  webAclArn: fixme.cfnWebAcl.attrArn,
   resourceArn: `arn:aws:apigateway:${Stack.of(stack).region}::/restapis/${api.deploymentStage.restApi.restApiId}/stages/${api.deploymentStage.stageName}`
 });
 
 // associating it with a CloudFront Distribution
 new Distribution(stack, 'Distribution', {
-  webAclId: fixme.webAcl.attrArn,
+  webAclId: fixme.cfnWebAcl.attrArn,
   // more properties
 })
 ```
