@@ -23,6 +23,11 @@ interface EnableManagedRuleProps extends BaseRuleManagedProps {
  */
 export class WebAcl extends Construct {
   /**
+   * The Amazon Resource Name (ARN) of the Web ACL.
+   * Used to associate the Web ACL with resources
+   */
+  public attrArn: CfnWebACL['attrArn']
+  /**
    * The internal CfnWebACL
    */
   public cfnWebAcl: CfnWebACL
@@ -60,6 +65,7 @@ export class WebAcl extends Construct {
         metricName
       }
     })
+    this.attrArn = this.cfnWebAcl.attrArn
   }
 
   private pushRule (rule: Rule): void {
