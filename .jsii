@@ -3026,7 +3026,7 @@
       }
     }
   },
-  "name": "@enfo/webacl",
+  "name": "@enfo/cdk-webacl",
   "readme": {
     "markdown": "# Introduction\n\nThis package exposes an opinionated Construct for setting up an AWS WebAcl using the CDK. Five custom rules are ready to be enabled. If you are not using the custom rules this package will not bring you much value.\n\n# Installation\n\nInstall the package by running\n\n```bash\nnpm install @enfo/cdk-webacl\n```\n\n# Getting started\n\n## Quick start\n\nThis is example is the least amount of configuration you have to do in order for the WebAcl to be created\n\n```typescript\nimport { WebAcl, Scope } from '@enfo/cdk-webacl'\nimport { Stack } from 'aws-cdk-lib'\nimport { RestApi } from 'aws-cdk-lib/aws-apigateway'\nimport { CfnWebACLAssociation } from 'aws-cdk-lib/aws-wafv2'\nimport { Distribution } from 'aws-cdk-lib/aws-cloudfront'\n\nconst stack = new Stack()\nconst webacl = new WebAcl(stack, 'MyWebAcl', {\n  scope: Scope.REGIONAL,\n  metricName: 'my-metric',\n  defaultAction: {\n    allow: {}\n  }\n})\n  .enableIpBlockRule()\n  .enableRateLimitRule()\n  .enableIpReputationRule()\n  .enableManagedCoreRule()\n  .enableBadInputsRule()\n\n// associating it with an API\nconst api = new RestApi(stack, 'Api')\napi.root.addMethod('GET')\nnew CfnWebACLAssociation(this, 'ApiAssociation', {\n  webAclArn: webacl.attrArn,\n  resourceArn: `arn:aws:apigateway:${Stack.of(stack).region}::/restapis/${api.deploymentStage.restApi.restApiId}/stages/${api.deploymentStage.stageName}`\n});\n\n// associating it with a CloudFront Distribution\nnew Distribution(stack, 'Distribution', {\n  webAclId: webacl.attrArn,\n  // more properties\n})\n```\n\n## Configuration options\n\nThe WebAcl and all rules can be configured.\n\n### WebAcl configuration\n\nThe WebAcl Construct takes an object with the interface WebAclProps which supports all properties from CfnWebAclProps except:\n\n* scope, this has been replaced with an enum instead of a string\n* visibilityConfig, this has been removed and its properties flattened into WebAclProps. Only metricName is mandatory\n\nExample of unique configuration options unique to WebAcl:\n\n```typescript\nnew WebAcl(stack, 'MyWebAcl', {\n  scope: Scope.CLOUDFRONT,\n  metricName: 'my-metric',\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true,\n  defaultAction: { // not unique but must be included\n    allow: {}\n  }\n})\n```\n\n### Rules configurations\n\nYou can only enable a rule **ONCE**. Attempting to enable a rule twice will result in an Error being thrown.\n\nAll rules share the same base interface. The following properties have been modified from CfnWebACL.RuleProperty:\n\n* name, no longer mandatory, has a rule specific default\n* priority, no longer mandatory, has a rule specific default\n* statement, removed and some properties flattered into rule properties for rules using AWS Managed Rule Groups ( IP Reputation, Managed Core and Bad Inputs)\n* visibilityConfig, removed and properties flatted into rule properties\n* action, removed from all rules but IP Block\n* overrideAction, set to `{ none: {} }` on all rules but IP Block\n\n### enableIpBlockRule configuration\n\nYou can read about IP set rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-ipset-match.html). The IP Block rule supports more properties than other rules. These have been grabbed from CfnIPSetProps, some have been replaced, others removed:\n\n* ipSetName, name you want for the IP Set\n* ipSetDescription, description you want for the IP Set\n* addresses, no longer mandatory\n* ipAddressVersion, replaced with enum instead of a string\n* ipSetTags\n\nExample of enableIpBlockRule options:\n\n```typescript\nnew WebAcl(...)\n.enableIpBlockRule({\n  name: 'cool-name', // default 'ip-block'\n  priority: 1, // default 10\n  metricName: 'something', // default 'ip-block'\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true,\n  action: {\n    allow: {}\n  }\n})\n```\n\nCustomizing the IP Set:\n\n```typescript\nnew WebAcl(stack, 'WebAcl', {\n  scope: Scope.REGIONAL,\n  metricName: 'something',\n  defaultAction: {\n    allow: {}\n  }\n})\n  .enableIpBlockRule({\n    ipSetName: 'my-set',\n    ipSetDescription: 'desc',\n    addresses: ['2001:0db8:85a3:0000:0000:8a2e:0370:7334'],\n    ipAddressVersion: IpAddressVersion.IPV6,\n    ipSetTags: [\n      {\n        key: 'key!',\n        value: 'value!'\n      }\n    ]\n  })\n```\n\nYou can also supply your own IP Set:\n\n```typescript\nconst ipSet = new CfnIPSet(stack, 'MySet', {\n  scope: 'REGIONAL',\n  name: 'my-set',\n  addresses: [],\n  ipAddressVersion: 'IPV4'\n})\n\nnew WebAcl(stack, 'WebAcl', {\n  scope: Scope.REGIONAL,\n  metricName: 'something',\n  defaultAction: {\n    allow: {}\n  }\n})\n  .enableIpBlockRule({\n    ipSet\n  })\n```\n\nIf an IP Set is supplied WebAcl will not create one\n\n### enableRateLimitRule configuration\n\nYou can read about rate limit rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-rate-based.html). The Rate Limit rule supports one property extra than the other rules:\n\n* rateLimit, defaults to 1000\n\nExample of options:\n\n```typescript\nnew WebAcl(...)\n.enableRateLimitRule({\n  name: 'cool-name', // default 'rate-limit'\n  priority: 1, // default 20\n  metricName: 'something', // default 'rate-limit'\n  rateLimit: 1337,\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true\n})\n```\n\n### enableIpReputationRule configuration\n\nYou can read about IP reputation rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-ip-rep.html). Example of enableIpReputationRule options:\n\n```typescript\nnew WebAcl(...)\n.enableIpReputationRule({\n  name: 'cool-name', // default 'ip-reputation'\n  priority: 1, // default 30\n  metricName: 'something', // default 'ip-reputation'\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true,\n  excludedRules: [{ name: 'wow' }],\n  managedRuleGroupConfigs: [{ loginPath: 'login!' }],\n  scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'NotReals' } }\n})\n```\n\n### enableManagedCoreRule configuration\n\nYou can read about the AWS core rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-baseline.html). Example of enableManagedCoreRule options:\n\n```typescript\nnew WebAcl(...)\n.enableManagedCoreRule({\n  name: 'cool-name', // default 'managed-core'\n  priority: 1, // default 40\n  metricName: 'something', // default 'managed-core'\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true,\n  excludedRules: [{ name: 'wow' }],\n  managedRuleGroupConfigs: [{ loginPath: 'login!' }],\n  scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'NotReals' } }\n})\n```\n\n### enableBadInputsRule configuration\n\nYou can read about the AWS bad inputs rules [here](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-baseline.html#aws-managed-rule-groups-baseline-known-bad-inputs). Example of enableBadInputsRule options:\n\n```typescript\nnew WebAcl(...)\n.enableBadInputsRule({\n  name: 'cool-name', // default 'bad-inputs'\n  priority: 1, // default 50\n  metricName: 'something', // default 'bad-inputs'\n  cloudWatchMetricsEnabled: true,\n  sampledRequestsEnabled: true,\n  excludedRules: [{ name: 'wow' }],\n  managedRuleGroupConfigs: [{ loginPath: 'login!' }],\n  scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'NotReals' } }\n})\n```\n"
   },
@@ -3037,20 +3037,20 @@
   "schema": "jsii/0.10.0",
   "targets": {
     "js": {
-      "npm": "@enfo/webacl"
+      "npm": "@enfo/cdk-webacl"
     }
   },
   "types": {
-    "@enfo/webacl.BaseRuleManagedProps": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.BaseRuleManagedProps": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable",
         "summary": "Base props for AWS managed rules."
       },
-      "fqn": "@enfo/webacl.BaseRuleManagedProps",
+      "fqn": "@enfo/cdk-webacl.BaseRuleManagedProps",
       "interfaces": [
-        "@enfo/webacl.BaseRuleProps"
+        "@enfo/cdk-webacl.BaseRuleProps"
       ],
       "kind": "interface",
       "locationInModule": {
@@ -3180,16 +3180,16 @@
       ],
       "symbolId": "lib/models:BaseRuleManagedProps"
     },
-    "@enfo/webacl.BaseRuleProps": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.BaseRuleProps": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable",
         "summary": "Base props for all rules props."
       },
-      "fqn": "@enfo/webacl.BaseRuleProps",
+      "fqn": "@enfo/cdk-webacl.BaseRuleProps",
       "interfaces": [
-        "@enfo/webacl.VisibilityConfig"
+        "@enfo/cdk-webacl.VisibilityConfig"
       ],
       "kind": "interface",
       "locationInModule": {
@@ -3305,16 +3305,16 @@
       ],
       "symbolId": "lib/models:BaseRuleProps"
     },
-    "@enfo/webacl.BaseRuleWithActionProps": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.BaseRuleWithActionProps": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable",
         "summary": "Base rule props with action included."
       },
-      "fqn": "@enfo/webacl.BaseRuleWithActionProps",
+      "fqn": "@enfo/cdk-webacl.BaseRuleWithActionProps",
       "interfaces": [
-        "@enfo/webacl.BaseRuleProps"
+        "@enfo/cdk-webacl.BaseRuleProps"
       ],
       "kind": "interface",
       "locationInModule": {
@@ -3356,16 +3356,16 @@
       ],
       "symbolId": "lib/models:BaseRuleWithActionProps"
     },
-    "@enfo/webacl.EnableBadInputsRule": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.EnableBadInputsRule": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable",
         "summary": "Properties when enabling the Bad Inputs rule."
       },
-      "fqn": "@enfo/webacl.EnableBadInputsRule",
+      "fqn": "@enfo/cdk-webacl.EnableBadInputsRule",
       "interfaces": [
-        "@enfo/webacl.BaseRuleManagedProps"
+        "@enfo/cdk-webacl.BaseRuleManagedProps"
       ],
       "kind": "interface",
       "locationInModule": {
@@ -3442,17 +3442,17 @@
       ],
       "symbolId": "lib/models:EnableBadInputsRule"
     },
-    "@enfo/webacl.EnableIpBlockProps": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.EnableIpBlockProps": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable",
         "summary": "Properties when enabling the IP Block rule."
       },
-      "fqn": "@enfo/webacl.EnableIpBlockProps",
+      "fqn": "@enfo/cdk-webacl.EnableIpBlockProps",
       "interfaces": [
-        "@enfo/webacl.BaseRuleWithActionProps",
-        "@enfo/webacl.IpSetProps"
+        "@enfo/cdk-webacl.BaseRuleWithActionProps",
+        "@enfo/cdk-webacl.IpSetProps"
       ],
       "kind": "interface",
       "locationInModule": {
@@ -3547,16 +3547,16 @@
       ],
       "symbolId": "lib/models:EnableIpBlockProps"
     },
-    "@enfo/webacl.EnableIpReputationRuleProps": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.EnableIpReputationRuleProps": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable",
         "summary": "Properties when enabling the IP Reputation rule."
       },
-      "fqn": "@enfo/webacl.EnableIpReputationRuleProps",
+      "fqn": "@enfo/cdk-webacl.EnableIpReputationRuleProps",
       "interfaces": [
-        "@enfo/webacl.BaseRuleManagedProps"
+        "@enfo/cdk-webacl.BaseRuleManagedProps"
       ],
       "kind": "interface",
       "locationInModule": {
@@ -3633,16 +3633,16 @@
       ],
       "symbolId": "lib/models:EnableIpReputationRuleProps"
     },
-    "@enfo/webacl.EnableManagedCoreRuleProps": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.EnableManagedCoreRuleProps": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable",
         "summary": "Properties when enabling the Managed Core rule."
       },
-      "fqn": "@enfo/webacl.EnableManagedCoreRuleProps",
+      "fqn": "@enfo/cdk-webacl.EnableManagedCoreRuleProps",
       "interfaces": [
-        "@enfo/webacl.BaseRuleManagedProps"
+        "@enfo/cdk-webacl.BaseRuleManagedProps"
       ],
       "kind": "interface",
       "locationInModule": {
@@ -3719,16 +3719,16 @@
       ],
       "symbolId": "lib/models:EnableManagedCoreRuleProps"
     },
-    "@enfo/webacl.EnableRateLimitRuleProps": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.EnableRateLimitRuleProps": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable",
         "summary": "Properties when enabling the Rate Limit rule."
       },
-      "fqn": "@enfo/webacl.EnableRateLimitRuleProps",
+      "fqn": "@enfo/cdk-webacl.EnableRateLimitRuleProps",
       "interfaces": [
-        "@enfo/webacl.BaseRuleProps"
+        "@enfo/cdk-webacl.BaseRuleProps"
       ],
       "kind": "interface",
       "locationInModule": {
@@ -3857,13 +3857,13 @@
       ],
       "symbolId": "lib/models:EnableRateLimitRuleProps"
     },
-    "@enfo/webacl.IpAddressVersion": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.IpAddressVersion": {
+      "assembly": "@enfo/cdk-webacl",
       "docs": {
         "stability": "stable",
         "summary": "Available IP address versions."
       },
-      "fqn": "@enfo/webacl.IpAddressVersion",
+      "fqn": "@enfo/cdk-webacl.IpAddressVersion",
       "kind": "enum",
       "locationInModule": {
         "filename": "lib/models.ts",
@@ -3888,14 +3888,14 @@
       "name": "IpAddressVersion",
       "symbolId": "lib/models:IpAddressVersion"
     },
-    "@enfo/webacl.IpSetProps": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.IpSetProps": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable",
         "summary": "Properties when creating an IP Set."
       },
-      "fqn": "@enfo/webacl.IpSetProps",
+      "fqn": "@enfo/cdk-webacl.IpSetProps",
       "kind": "interface",
       "locationInModule": {
         "filename": "lib/models.ts",
@@ -3948,7 +3948,7 @@
           "name": "ipAddressVersion",
           "optional": true,
           "type": {
-            "fqn": "@enfo/webacl.IpAddressVersion"
+            "fqn": "@enfo/cdk-webacl.IpAddressVersion"
           }
         },
         {
@@ -4021,13 +4021,13 @@
       ],
       "symbolId": "lib/models:IpSetProps"
     },
-    "@enfo/webacl.Scope": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.Scope": {
+      "assembly": "@enfo/cdk-webacl",
       "docs": {
         "stability": "stable",
         "summary": "Available resource associations."
       },
-      "fqn": "@enfo/webacl.Scope",
+      "fqn": "@enfo/cdk-webacl.Scope",
       "kind": "enum",
       "locationInModule": {
         "filename": "lib/models.ts",
@@ -4053,13 +4053,13 @@
       "name": "Scope",
       "symbolId": "lib/models:Scope"
     },
-    "@enfo/webacl.VisibilityConfig": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.VisibilityConfig": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable"
       },
-      "fqn": "@enfo/webacl.VisibilityConfig",
+      "fqn": "@enfo/cdk-webacl.VisibilityConfig",
       "kind": "interface",
       "locationInModule": {
         "filename": "lib/models.ts",
@@ -4132,14 +4132,14 @@
       ],
       "symbolId": "lib/models:VisibilityConfig"
     },
-    "@enfo/webacl.WebAcl": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.WebAcl": {
+      "assembly": "@enfo/cdk-webacl",
       "base": "constructs.Construct",
       "docs": {
         "stability": "stable",
         "summary": "WebAcl with methods for enabling opinionated rules."
       },
-      "fqn": "@enfo/webacl.WebAcl",
+      "fqn": "@enfo/cdk-webacl.WebAcl",
       "initializer": {
         "docs": {
           "stability": "stable",
@@ -4174,7 +4174,7 @@
             },
             "name": "props",
             "type": {
-              "fqn": "@enfo/webacl.WebAclProps"
+              "fqn": "@enfo/cdk-webacl.WebAclProps"
             }
           }
         ]
@@ -4203,13 +4203,13 @@
               "name": "props",
               "optional": true,
               "type": {
-                "fqn": "@enfo/webacl.EnableBadInputsRule"
+                "fqn": "@enfo/cdk-webacl.EnableBadInputsRule"
               }
             }
           ],
           "returns": {
             "type": {
-              "fqn": "@enfo/webacl.WebAcl"
+              "fqn": "@enfo/cdk-webacl.WebAcl"
             }
           }
         },
@@ -4231,13 +4231,13 @@
               "name": "props",
               "optional": true,
               "type": {
-                "fqn": "@enfo/webacl.EnableIpBlockProps"
+                "fqn": "@enfo/cdk-webacl.EnableIpBlockProps"
               }
             }
           ],
           "returns": {
             "type": {
-              "fqn": "@enfo/webacl.WebAcl"
+              "fqn": "@enfo/cdk-webacl.WebAcl"
             }
           }
         },
@@ -4259,13 +4259,13 @@
               "name": "props",
               "optional": true,
               "type": {
-                "fqn": "@enfo/webacl.EnableIpReputationRuleProps"
+                "fqn": "@enfo/cdk-webacl.EnableIpReputationRuleProps"
               }
             }
           ],
           "returns": {
             "type": {
-              "fqn": "@enfo/webacl.WebAcl"
+              "fqn": "@enfo/cdk-webacl.WebAcl"
             }
           }
         },
@@ -4287,13 +4287,13 @@
               "name": "props",
               "optional": true,
               "type": {
-                "fqn": "@enfo/webacl.EnableManagedCoreRuleProps"
+                "fqn": "@enfo/cdk-webacl.EnableManagedCoreRuleProps"
               }
             }
           ],
           "returns": {
             "type": {
-              "fqn": "@enfo/webacl.WebAcl"
+              "fqn": "@enfo/cdk-webacl.WebAcl"
             }
           }
         },
@@ -4315,13 +4315,13 @@
               "name": "props",
               "optional": true,
               "type": {
-                "fqn": "@enfo/webacl.EnableRateLimitRuleProps"
+                "fqn": "@enfo/cdk-webacl.EnableRateLimitRuleProps"
               }
             }
           ],
           "returns": {
             "type": {
-              "fqn": "@enfo/webacl.WebAcl"
+              "fqn": "@enfo/cdk-webacl.WebAcl"
             }
           }
         }
@@ -4375,16 +4375,16 @@
       ],
       "symbolId": "lib/waf:WebAcl"
     },
-    "@enfo/webacl.WebAclProps": {
-      "assembly": "@enfo/webacl",
+    "@enfo/cdk-webacl.WebAclProps": {
+      "assembly": "@enfo/cdk-webacl",
       "datatype": true,
       "docs": {
         "stability": "stable",
         "summary": "Properties when creating a new WebAcl."
       },
-      "fqn": "@enfo/webacl.WebAclProps",
+      "fqn": "@enfo/cdk-webacl.WebAclProps",
       "interfaces": [
-        "@enfo/webacl.VisibilityConfig"
+        "@enfo/cdk-webacl.VisibilityConfig"
       ],
       "kind": "interface",
       "locationInModule": {
@@ -4453,7 +4453,7 @@
           },
           "name": "scope",
           "type": {
-            "fqn": "@enfo/webacl.Scope"
+            "fqn": "@enfo/cdk-webacl.Scope"
           }
         },
         {
@@ -4646,5 +4646,5 @@
     }
   },
   "version": "0.0.1",
-  "fingerprint": "1eE+F2yZzy6wmL6ZdTKNd2x+j46NDy6QZ7jRnp0LhPI="
+  "fingerprint": "2SG4dY8FZVuN/qXoFednsW3gRYRzLee3Zz0Q0Ed7OpM="
 }

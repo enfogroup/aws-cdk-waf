@@ -1,5 +1,5 @@
 {
-  "name": "@enfo/webacl",
+  "name": "@enfo/cdk-webacl",
   "version": "0.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
