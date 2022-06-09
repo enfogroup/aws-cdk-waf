@@ -1,6 +1,6 @@
 import { Construct } from 'constructs'
 import { CfnIPSet, CfnWebACL } from 'aws-cdk-lib/aws-wafv2'
-import { EnableBadInputsRule, EnableIpBlockProps, EnableIpReputationRuleProps, EnableManagedCoreRuleProps, EnableRateLimitRuleProps, IpAddressVersion, Rule, WebAclProps } from './models'
+import { BaseRuleManagedProps, EnableBadInputsRule, EnableIpBlockProps, EnableIpReputationRuleProps, EnableManagedCoreRuleProps, EnableRateLimitRuleProps, IpAddressVersion, Rule, WebAclProps } from './models'
 
 enum RULE_ID {
   IP_BLOCK = 'ip-block',
@@ -8,6 +8,14 @@ enum RULE_ID {
   IP_REPUTATION = 'ip-reputation',
   MANAGED_CORE = 'managed-core',
   BAD_INPUTS = 'bad-inputs'
+}
+
+interface EnableManagedRuleProps extends BaseRuleManagedProps {
+  id: RULE_ID
+  name?: string
+  priority?: number
+  metricName?: string
+  ruleName: string
 }
 
 /**
@@ -175,18 +183,12 @@ export class WebAcl extends Construct {
     return this
   }
 
-  /**
-   * Sets up a rule enabling AWSManagedRulesAmazonIpReputationList
-   * @param props
-   * See interface definition
-   */
-  public enableIpReputationRule (props: EnableIpReputationRuleProps = {}): WebAcl {
-    const id = RULE_ID.IP_REPUTATION
-    this.checkIfRuleIsEnabled(id)
-
+  private enableManagedRule (props: EnableManagedRuleProps): WebAcl {
     const {
+      id,
       metricName = id,
       name = id,
+      ruleName,
       cloudWatchMetricsEnabled = true,
       sampledRequestsEnabled = true,
       priority = 30,
@@ -196,6 +198,8 @@ export class WebAcl extends Construct {
       ...rest
     } = props
 
+    this.checkIfRuleIsEnabled(id)
+
     const rule: Rule = {
       name,
       priority,
@@ -203,7 +207,7 @@ export class WebAcl extends Construct {
       statement: {
         managedRuleGroupStatement: {
           vendorName: 'AWS',
-          name: 'AWSManagedRulesAmazonIpReputationList',
+          name: ruleName,
           excludedRules,
           managedRuleGroupConfigs,
           scopeDownStatement
@@ -220,6 +224,20 @@ export class WebAcl extends Construct {
     this.pushRule(rule)
     this.setRuleAsEnabled(id)
     return this
+  }
+
+  /**
+   * Sets up a rule enabling AWSManagedRulesAmazonIpReputationList
+   * @param props
+   * See interface definition
+   */
+  public enableIpReputationRule (props: EnableIpReputationRuleProps = {}): WebAcl {
+    return this.enableManagedRule({
+      id: RULE_ID.IP_REPUTATION,
+      priority: 30,
+      ruleName: 'AWSManagedRulesAmazonIpReputationList',
+      ...props
+    })
   }
 
   /**
@@ -228,45 +246,12 @@ export class WebAcl extends Construct {
    * See interface definition
    */
   public enableManagedCoreRule (props: EnableManagedCoreRuleProps = {}): WebAcl {
-    const id = RULE_ID.MANAGED_CORE
-    this.checkIfRuleIsEnabled(id)
-
-    const {
-      metricName = id,
-      name = id,
-      cloudWatchMetricsEnabled = true,
-      sampledRequestsEnabled = true,
-      priority = 40,
-      excludedRules,
-      managedRuleGroupConfigs,
-      scopeDownStatement,
-      ...rest
-    } = props
-
-    const rule: Rule = {
-      name,
-      priority,
-      overrideAction: { none: {} },
-      statement: {
-        managedRuleGroupStatement: {
-          vendorName: 'AWS',
-          name: 'AWSManagedRulesCommonRuleSet',
-          excludedRules,
-          managedRuleGroupConfigs,
-          scopeDownStatement
-        }
-      },
-      visibilityConfig: {
-        cloudWatchMetricsEnabled,
-        metricName,
-        sampledRequestsEnabled
-      },
-      ...rest
-    }
-
-    this.pushRule(rule)
-    this.setRuleAsEnabled(id)
-    return this
+    return this.enableManagedRule({
+      id: RULE_ID.MANAGED_CORE,
+      priority: 40,
+      ruleName: 'AWSManagedRulesCommonRuleSet',
+      ...props
+    })
   }
 
   /**
@@ -275,44 +260,11 @@ export class WebAcl extends Construct {
    * See interface definition
    */
   public enableBadInputsRule (props: EnableBadInputsRule = {}): WebAcl {
-    const id = RULE_ID.BAD_INPUTS
-    this.checkIfRuleIsEnabled(id)
-
-    const {
-      metricName = id,
-      name = id,
-      cloudWatchMetricsEnabled = true,
-      sampledRequestsEnabled = true,
-      priority = 50,
-      excludedRules,
-      managedRuleGroupConfigs,
-      scopeDownStatement,
-      ...rest
-    } = props
-
-    const rule: Rule = {
-      name,
-      priority,
-      overrideAction: { none: {} },
-      statement: {
-        managedRuleGroupStatement: {
-          vendorName: 'AWS',
-          name: 'AWSManagedRulesKnownBadInputsRuleSet',
-          excludedRules,
-          managedRuleGroupConfigs,
-          scopeDownStatement
-        }
-      },
-      visibilityConfig: {
-        cloudWatchMetricsEnabled,
-        metricName,
-        sampledRequestsEnabled
-      },
-      ...rest
-    }
-
-    this.pushRule(rule)
-    this.setRuleAsEnabled(id)
-    return this
+    return this.enableManagedRule({
+      id: RULE_ID.BAD_INPUTS,
+      priority: 50,
+      ruleName: 'AWSManagedRulesKnownBadInputsRuleSet',
+      ...props
+    })
   }
 }
