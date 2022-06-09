@@ -190,6 +190,9 @@ export class WebAcl extends Construct {
       cloudWatchMetricsEnabled = true,
       sampledRequestsEnabled = true,
       priority = 30,
+      excludedRules,
+      managedRuleGroupConfigs,
+      scopeDownStatement,
       ...rest
     } = props
 
@@ -200,7 +203,10 @@ export class WebAcl extends Construct {
       statement: {
         managedRuleGroupStatement: {
           vendorName: 'AWS',
-          name: 'AWSManagedRulesAmazonIpReputationList'
+          name: 'AWSManagedRulesAmazonIpReputationList',
+          excludedRules,
+          managedRuleGroupConfigs,
+          scopeDownStatement
         }
       },
       visibilityConfig: {
@@ -231,6 +237,9 @@ export class WebAcl extends Construct {
       cloudWatchMetricsEnabled = true,
       sampledRequestsEnabled = true,
       priority = 40,
+      excludedRules,
+      managedRuleGroupConfigs,
+      scopeDownStatement,
       ...rest
     } = props
 
@@ -242,7 +251,9 @@ export class WebAcl extends Construct {
         managedRuleGroupStatement: {
           vendorName: 'AWS',
           name: 'AWSManagedRulesCommonRuleSet',
-          excludedRules: []
+          excludedRules,
+          managedRuleGroupConfigs,
+          scopeDownStatement
         }
       },
       visibilityConfig: {
@@ -273,6 +284,9 @@ export class WebAcl extends Construct {
       cloudWatchMetricsEnabled = true,
       sampledRequestsEnabled = true,
       priority = 50,
+      excludedRules,
+      managedRuleGroupConfigs,
+      scopeDownStatement,
       ...rest
     } = props
 
@@ -284,7 +298,9 @@ export class WebAcl extends Construct {
         managedRuleGroupStatement: {
           vendorName: 'AWS',
           name: 'AWSManagedRulesKnownBadInputsRuleSet',
-          excludedRules: []
+          excludedRules,
+          managedRuleGroupConfigs,
+          scopeDownStatement
         }
       },
       visibilityConfig: {

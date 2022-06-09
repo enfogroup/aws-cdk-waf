@@ -52,56 +52,56 @@ export enum IpAddressVersion {
  * Properties when creating an IP Set
  */
 export interface IpSetProps {
-    /**
-     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
-     *
-     * Example address strings:
-     *
-     * - To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify `192.0.2.44/32` .
-     * - To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify `192.0.2.0/24` .
-     * - To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify `1111:0000:0000:0000:0000:0000:0000:0111/128` .
-     * - To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify `1111:0000:0000:0000:0000:0000:0000:0000/64` .
-     *
-     * For more information about CIDR notation, see the Wikipedia entry [Classless Inter-Domain Routing](https://docs.aws.amazon.com/https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) .
-     *
-     * Example JSON `Addresses` specifications:
-     *
-     * - Empty array: `"Addresses": []`
-     * - Array with one address: `"Addresses": ["192.0.2.44/32"]`
-     * - Array with three addresses: `"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]`
-     * - INVALID specification: `"Addresses": [""]` INVALID
-     *
-     * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-addresses
-     * @default []
-     */
-     readonly addresses?: string[];
-     /**
-      * The version of the IP addresses, either `IPV4` or `IPV6` .
-      *
-      * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-ipaddressversion
-      * @default 'IPV4'
-      */
-     readonly ipAddressVersion?: IpAddressVersion;
-     /**
-      * A description of the IP set that helps with identification.
-      *
-      * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-description
-      */
-     readonly ipSetDescription?: string;
-     /**
-      * The name of the IP set. You cannot change the name of an `IPSet` after you create it.
-      *
-      * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-name
-      */
-     readonly ipSetName?: string;
-     /**
-      * Key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
-      *
-      * > To modify tags on existing resources, use the AWS WAF APIs or command line interface. With AWS CloudFormation , you can only add tags to AWS WAF resources during resource creation.
-      *
-      * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-tags
-      */
-     readonly ipSetTags?: CfnTag[];
+  /**
+   * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+   *
+   * Example address strings:
+   *
+   * - To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify `192.0.2.44/32` .
+   * - To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify `192.0.2.0/24` .
+   * - To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify `1111:0000:0000:0000:0000:0000:0000:0111/128` .
+   * - To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify `1111:0000:0000:0000:0000:0000:0000:0000/64` .
+   *
+   * For more information about CIDR notation, see the Wikipedia entry [Classless Inter-Domain Routing](https://docs.aws.amazon.com/https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) .
+   *
+   * Example JSON `Addresses` specifications:
+   *
+   * - Empty array: `"Addresses": []`
+   * - Array with one address: `"Addresses": ["192.0.2.44/32"]`
+   * - Array with three addresses: `"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]`
+   * - INVALID specification: `"Addresses": [""]` INVALID
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-addresses
+   * @default []
+   */
+  readonly addresses?: string[];
+  /**
+   * The version of the IP addresses, either `IPV4` or `IPV6` .
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-ipaddressversion
+   * @default 'IPV4'
+   */
+  readonly ipAddressVersion?: IpAddressVersion;
+  /**
+   * A description of the IP set that helps with identification.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-description
+   */
+  readonly ipSetDescription?: string;
+  /**
+   * The name of the IP set. You cannot change the name of an `IPSet` after you create it.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-name
+   */
+  readonly ipSetName?: string;
+  /**
+   * Key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
+   *
+   * > To modify tags on existing resources, use the AWS WAF APIs or command line interface. With AWS CloudFormation , you can only add tags to AWS WAF resources during resource creation.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-tags
+   */
+  readonly ipSetTags?: CfnTag[];
 }
 
 /**
@@ -130,7 +130,7 @@ export interface WebAclProps extends VisibilityConfig {
    * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-customresponsebodies
    */
   readonly customResponseBodies?: {
-      [key: string]: (CfnWebACL.CustomResponseBodyProperty | IResolvable);
+    [key: string]: (CfnWebACL.CustomResponseBodyProperty | IResolvable);
   } | IResolvable;
   /**
    * A description of the web ACL that helps with identification.
@@ -240,6 +240,35 @@ export interface BaseRuleWithActionProps extends BaseRuleProps {
 }
 
 /**
+ * Base props for AWS managed rules
+ */
+export interface BaseRuleManagedProps extends BaseRuleProps {
+
+  /**
+   * The rules in the referenced rule group whose actions are set to `Count` . When you exclude a rule, AWS WAF evaluates it exactly as it would if the rule action setting were `Count` . This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-excludedrules
+   */
+  readonly excludedRules?: Array<CfnWebACL.ExcludedRuleProperty | IResolvable> | IResolvable;
+  /**
+   * Additional information that's used by a managed rule group. Most managed rule groups don't require this.
+   *
+   * Use this for the account takeover prevention managed rule group `AWSManagedRulesATPRuleSet` , to provide information about the sign-in page of your application.
+   *
+   * You can provide multiple individual `ManagedRuleGroupConfig` objects for any rule group configuration, for example `UsernameField` and `PasswordField` . The configuration that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration objects: `LoginPath` , `PasswordField` , `PayloadType` and `UsernameField` .
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-managedrulegroupconfigs
+   */
+  readonly managedRuleGroupConfigs?: Array<CfnWebACL.ManagedRuleGroupConfigProperty | IResolvable> | IResolvable;
+  /**
+   * An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable `Statement` in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-scopedownstatement
+   */
+  readonly scopeDownStatement?: CfnWebACL.StatementProperty | IResolvable;
+}
+
+/**
  * Properties when enabling the IP Block rule
  */
 export interface EnableIpBlockProps extends BaseRuleWithActionProps, IpSetProps {
@@ -322,7 +351,7 @@ export interface EnableRateLimitRuleProps extends BaseRuleProps {
 /**
  * Properties when enabling the IP Reputation rule
  */
-export interface EnableIpReputationRuleProps extends BaseRuleProps {
+export interface EnableIpReputationRuleProps extends BaseRuleManagedProps {
   /**
    * Metric name for default action
    *
@@ -349,7 +378,7 @@ export interface EnableIpReputationRuleProps extends BaseRuleProps {
 /**
  * Properties when enabling the Managed Core rule
  */
-export interface EnableManagedCoreRuleProps extends BaseRuleProps {
+export interface EnableManagedCoreRuleProps extends BaseRuleManagedProps {
   /**
    * Metric name for default action
    *
@@ -376,7 +405,7 @@ export interface EnableManagedCoreRuleProps extends BaseRuleProps {
 /**
  * Properties when enabling the Bad Inputs rule
  */
-export interface EnableBadInputsRule extends BaseRuleProps {
+export interface EnableBadInputsRule extends BaseRuleManagedProps {
   /**
    * Metric name for default action
    *
