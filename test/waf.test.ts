@@ -467,7 +467,10 @@ describe('WebAcl', () => {
           priority: 9,
           metricName: 'my-metric',
           cloudWatchMetricsEnabled: false,
-          sampledRequestsEnabled: false
+          sampledRequestsEnabled: false,
+          excludedRules: [{ name: 'wow' }],
+          managedRuleGroupConfigs: [{ loginPath: 'login!' }],
+          scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'nope' } }
         })
 
       const template = Template.fromStack(stack)
@@ -482,7 +485,23 @@ describe('WebAcl', () => {
             Statement: {
               ManagedRuleGroupStatement: {
                 Name: 'AWSManagedRulesAmazonIpReputationList',
-                VendorName: 'AWS'
+                VendorName: 'AWS',
+                ExcludedRules: [
+                  {
+                    Name: 'wow'
+                  }
+                ],
+                ManagedRuleGroupConfigs: [
+                  {
+                    LoginPath: 'login!'
+                  }
+                ],
+                ScopeDownStatement: {
+                  ManagedRuleGroupStatement: {
+                    Name: 'nope',
+                    VendorName: 'Enfo'
+                  }
+                }
               }
             },
             VisibilityConfig: {
@@ -565,7 +584,10 @@ describe('WebAcl', () => {
           priority: 9,
           metricName: 'my-metric',
           cloudWatchMetricsEnabled: false,
-          sampledRequestsEnabled: false
+          sampledRequestsEnabled: false,
+          excludedRules: [{ name: 'wow' }],
+          managedRuleGroupConfigs: [{ loginPath: 'login!' }],
+          scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'nope' } }
         })
 
       const template = Template.fromStack(stack)
@@ -580,7 +602,23 @@ describe('WebAcl', () => {
             Statement: {
               ManagedRuleGroupStatement: {
                 Name: 'AWSManagedRulesCommonRuleSet',
-                VendorName: 'AWS'
+                VendorName: 'AWS',
+                ExcludedRules: [
+                  {
+                    Name: 'wow'
+                  }
+                ],
+                ManagedRuleGroupConfigs: [
+                  {
+                    LoginPath: 'login!'
+                  }
+                ],
+                ScopeDownStatement: {
+                  ManagedRuleGroupStatement: {
+                    Name: 'nope',
+                    VendorName: 'Enfo'
+                  }
+                }
               }
             },
             VisibilityConfig: {
@@ -663,7 +701,10 @@ describe('WebAcl', () => {
           priority: 9,
           metricName: 'my-metric',
           cloudWatchMetricsEnabled: false,
-          sampledRequestsEnabled: false
+          sampledRequestsEnabled: false,
+          excludedRules: [{ name: 'wow' }],
+          managedRuleGroupConfigs: [{ loginPath: 'login!' }],
+          scopeDownStatement: { managedRuleGroupStatement: { vendorName: 'Enfo', name: 'nope' } }
         })
 
       const template = Template.fromStack(stack)
@@ -678,7 +719,23 @@ describe('WebAcl', () => {
             Statement: {
               ManagedRuleGroupStatement: {
                 Name: 'AWSManagedRulesKnownBadInputsRuleSet',
-                VendorName: 'AWS'
+                VendorName: 'AWS',
+                ExcludedRules: [
+                  {
+                    Name: 'wow'
+                  }
+                ],
+                ManagedRuleGroupConfigs: [
+                  {
+                    LoginPath: 'login!'
+                  }
+                ],
+                ScopeDownStatement: {
+                  ManagedRuleGroupStatement: {
+                    Name: 'nope',
+                    VendorName: 'Enfo'
+                  }
+                }
               }
             },
             VisibilityConfig: {
