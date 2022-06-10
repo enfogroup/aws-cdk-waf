@@ -4,3 +4,9 @@
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+
+*.config.js
+*.json
+test/*
+tsconfig*
+.husky/*
