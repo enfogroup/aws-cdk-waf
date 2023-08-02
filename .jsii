@@ -7,7 +7,7 @@
     ]
   },
   "dependencies": {
-    "aws-cdk-lib": "2.27.0",
+    "aws-cdk-lib": "^2.27.0",
     "constructs": "^10.1.31"
   },
   "dependencyClosure": {
@@ -4645,6 +4645,6 @@
       "symbolId": "lib/models:WebAclProps"
     }
   },
-  "version": "0.0.1",
-  "fingerprint": "2SG4dY8FZVuN/qXoFednsW3gRYRzLee3Zz0Q0Ed7OpM="
+  "version": "0.0.2",
+  "fingerprint": "x2u/mx8FA5aBHDvMfJvNG88VM+GEgYIi+e8A2Vky/OQ="
 }

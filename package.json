@@ -1,6 +1,6 @@
 {
   "name": "@enfo/cdk-webacl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "description": "Opinionated wrapper around CDK L1 Construct WebAcl",
@@ -25,7 +25,8 @@
     "test": "jest",
     "lint": "npx eslint --ext .ts .",
     "lint:fix": "npx eslint --fix --ext .ts .",
-    "clean": "rm -rf lib/*.d.ts lib/*.d.ts.map lib/*.js test/*.d.ts test/*.d.ts.map test/*.js"
+    "clean": "rm -rf lib/*.d.ts lib/*.d.ts.map lib/*.js test/*.d.ts test/*.d.ts.map test/*.js",
+    "postinstall": "npx husky install"
   },
   "devDependencies": {
     "@aws-cdk/assert": "^2.27.0",
@@ -52,7 +53,7 @@
     "typescript": "~3.9.7"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "2.27.0",
+    "aws-cdk-lib": "^2.27.0",
     "constructs": "^10.1.31"
   },
   "stability": "stable",
