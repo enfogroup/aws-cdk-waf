@@ -1,6 +1,6 @@
 {
   "name": "@enfo/cdk-webacl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "description": "Opinionated wrapper around CDK L1 Construct WebAcl",
